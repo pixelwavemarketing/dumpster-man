@@ -32,7 +32,7 @@ function Footer() {
 
         <div className="footer-bottom">
           <a 
-            href="https://pixelwavemarketing.com" 
+            href="https://usepixelwave.com" 
             target="_blank" 
             rel="noopener noreferrer"
             className="creator-link"
