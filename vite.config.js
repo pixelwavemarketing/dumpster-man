@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import compression from 'vite-plugin-compression'
+import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -8,6 +9,7 @@ export default defineConfig({
     react(),
     compression()
   ],
+  root: path.resolve(__dirname, ''),
   build: {
     outDir: 'dist',
     rollupOptions: {
@@ -16,6 +18,7 @@ export default defineConfig({
           vendor: ['react', 'react-dom', 'react-router-dom'],
         },
       },
+      input: path.resolve(__dirname, 'index.html')
     },
     minify: 'terser',
     cssCodeSplit: true,
