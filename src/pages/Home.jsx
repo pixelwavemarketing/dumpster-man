@@ -19,12 +19,12 @@ function Home() {
           <h2>Local Waste Management Experts</h2>
           <div className="section-content">
             <p>
-              Based in Mechanicville, NY, Dumpster Man provides reliable and efficient 
+              Based in Mechanicville, NY, The Dumpster Man provides reliable and efficient 
               dumpster rental services for residential and commercial projects.
             </p>
             <p>
-              A commitment to customer satisfaction, 
-              we ensure your waste management needs are handled professionally.
+              We have a commitment to customer satisfaction, 
+              and we ensure your waste management needs are handled professionally.
             </p>
           </div>
           <div className="cta-container">
