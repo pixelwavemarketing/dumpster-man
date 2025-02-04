@@ -23,6 +23,16 @@
     </script>
   </head>
   <body>
+    <!-- Add this form for Netlify to detect -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="address" />
+      <select name="dumpsterSize"></select>
+      <textarea name="message"></textarea>
+    </form>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!-- ... other content ... -->
