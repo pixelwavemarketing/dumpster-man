@@ -1,40 +1,36 @@
-import { Component } from 'react'
+import React from 'react';
 
-class ErrorBoundary extends Component {
+class ErrorBoundary extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = { hasError: false, errorMessage: '' }
+    super(props);
+    this.state = { hasError: false };
   }
 
   static getDerivedStateFromError(error) {
-    return { hasError: true }
+    return { hasError: true };
   }
 
   componentDidCatch(error, errorInfo) {
-    // Log error to a service like Sentry or your own logging system
-    console.error('Error:', error)
-    console.error('Error Info:', errorInfo)
-    this.setState({ errorMessage: error.message })
+    console.log('Error:', error);
+    console.log('Error Info:', errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
       return (
-        <div className="error-container">
-          <h2>Something went wrong</h2>
-          <p>{this.state.errorMessage}</p>
-          <button 
-            onClick={() => window.location.reload()}
-            className="refresh-button"
-          >
-            Refresh Page
-          </button>
+        <div style={{ 
+          padding: '20px', 
+          textAlign: 'center', 
+          marginTop: '50px' 
+        }}>
+          <h1>Something went wrong.</h1>
+          <p>Please try refreshing the page.</p>
         </div>
-      )
+      );
     }
 
-    return this.props.children
+    return this.props.children;
   }
 }
 
-export default ErrorBoundary
+export default ErrorBoundary; 

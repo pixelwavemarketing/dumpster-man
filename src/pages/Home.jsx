@@ -51,7 +51,7 @@ function Home() {
               </p>
             </div>
             <div className="cta-container">
-              <Link to="/sizes" className="cta-button secondary">
+              <Link to="/dumpster-sizes" className="cta-button secondary">
                 View All Sizes →
               </Link>
             </div>
