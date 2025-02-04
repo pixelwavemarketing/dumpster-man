@@ -1523,3 +1523,7 @@ main {
   margin-bottom: 8px;
   display: block;
 }
+
+.hidden {
+  display: none;
+}
