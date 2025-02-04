@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thedumpsterman518.com/sitemap.xml 
