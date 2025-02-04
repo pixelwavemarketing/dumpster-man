@@ -315,6 +315,7 @@ main {
   max-width: 2000px;
   margin: 0 auto;
   width: 90%;
+  text-align: center;
 }
 
 .service-item {
@@ -441,6 +442,7 @@ main {
     grid-template-columns: 1fr;
     padding: 1rem;
     width: 95%;
+    text-align: center;
   }
   
   .image-container {
@@ -1072,6 +1074,7 @@ main {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
+  margin-top: -70px;
 }
 
 .contact-header h1 {
@@ -1214,7 +1217,8 @@ main {
   }
 
   .contact-header {
-    padding: 2rem 1rem 2.5rem;
+    padding: 2rem 1rem 1.5rem;
+    margin-top: 5px;
   }
 
   .contact-header h1 {
