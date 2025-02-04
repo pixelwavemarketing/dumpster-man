@@ -9,6 +9,7 @@ export default defineConfig({
     compression()
   ],
   build: {
+    outDir: 'dist',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -20,7 +21,7 @@ export default defineConfig({
     cssCodeSplit: true,
   },
   server: {
-    port: 5173,
+    port: 3000,
     strictPort: true,
     host: true
   }
