@@ -1,12 +1,47 @@
 import { useState } from 'react';
 
 function ContactForm() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        e.target.reset();
+      } else {
+        alert('Form submission failed. Please try again.');
+      }
+    } catch (error) {
+      alert('Error submitting form. Please try again.');
+    }
+  };
+
+  if (submitted) {
+    return (
+      <div className="form-success">
+        <h3>Thank you for your submission!</h3>
+        <p>We will get back to you shortly.</p>
+      </div>
+    );
+  }
+
   return (
     <form 
       name="contact" 
       method="POST" 
       data-netlify="true"
+      netlify-honeypot="bot-field"
       className="contact-form"
+      onSubmit={handleSubmit}
     >
       <input type="hidden" name="form-name" value="contact" />
       <p hidden>
