@@ -31,11 +31,23 @@ function FAQ() {
     },
     {
       question: "What is your payment policy?",
-      answer: "We will send you an invoice after the dumpster is picked up and weighed to asses the cost."
+      answer: "We will send you an invoice after the dumpster is picked up and weighed to assess the cost."
     },
     {
       question: "What items are not accepted?",
       answer: "We do not accept hazardous materials, electronics, and certain other items. Some items come at a extra charge"
+    },
+    {
+      question: "Can the dumpster be filled over the top?",
+      answer: "You can fill it up as much as you want, so long as we can get a tarp over it for safe transportation."
+    },
+    {
+      question: "Should the dumpster be kept covered?",
+      answer: "We recommend you keep it covered to avoid water causing any additional weight as it could increase the cost of the rental."
+    },
+    {
+      question: "Will the dumpster damage my property?",
+      answer: "No! We will place the dumpster down safely and on blocks of wood to ensure it does not damage your property."
     }
   ];
 
