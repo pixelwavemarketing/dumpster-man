@@ -14,21 +14,29 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()
     
-    // This will work with Netlify forms automatically
-    // Just make sure to add the "data-netlify='true'" attribute to the form
-    
-    // Show success message
-    setShowSuccess(true)
-    
-    // Reset form
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      streetAddress: '',
-      city: '',
-      dumpsterSize: '',
+    // Create FormData object
+    const form = e.target
+    const formData = new FormData(form)
+
+    // Submit to Netlify
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
     })
+      .then(() => {
+        setShowSuccess(true)
+        // Reset form
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          streetAddress: '',
+          city: '',
+          dumpsterSize: '',
+        })
+      })
+      .catch((error) => console.log(error))
   }
 
   const handleChange = (e) => {
@@ -71,11 +79,17 @@ function Contact() {
           name="contact"
           method="POST"
           data-netlify="true"
+          netlify-honeypot="bot-field"
         >
           <input type="hidden" name="form-name" value="contact" />
+          <p className="hidden">
+            <label>
+              Don't fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
           
           <div className="form-group">
-            <label htmlFor="name">Name *</label>
+            <label htmlFor="name">Name</label>
             <input
               type="text"
               id="name"
@@ -88,7 +102,7 @@ function Contact() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="phone">Phone Number *</label>
+            <label htmlFor="phone">Phone Number</label>
             <input
               type="tel"
               id="phone"
