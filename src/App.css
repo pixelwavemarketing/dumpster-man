@@ -309,13 +309,26 @@ main {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 600px));
+  grid-template-rows: auto auto; /* Two explicit rows */
   gap: 4rem;
   padding: 2rem;
-  max-width: 2000px;
+  max-width: 1400px;
   margin: 0 auto;
   width: 90%;
-  text-align: center;
+  justify-content: center;
+}
+
+/* Target first two items for first row */
+.service-item:nth-child(1),
+.service-item:nth-child(2) {
+  grid-row: 1;
+}
+
+/* Target last two items for second row */
+.service-item:nth-child(3),
+.service-item:nth-child(4) {
+  grid-row: 2;
 }
 
 .service-item {
@@ -328,10 +341,9 @@ main {
 
 .image-container {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1/1;
   overflow: hidden;
   cursor: pointer;
-  min-height: 600px;
   width: 100%;
 }
 
@@ -407,57 +419,28 @@ main {
   }
 }
 
-/* Responsive adjustments */
-@media (max-width: 1600px) {
-  .image-container {
-    min-height: 500px;
-  }
-}
-
+/* Add new breakpoint for medium screens */
 @media (max-width: 1200px) {
-  .image-container {
-    min-height: 400px;
+  .services-grid {
+    grid-template-columns: minmax(0, 600px);
+    grid-template-rows: auto;
+    gap: 3rem;
+  }
+
+  /* Remove row assignments for mobile */
+  .service-item:nth-child(1),
+  .service-item:nth-child(2),
+  .service-item:nth-child(3),
+  .service-item:nth-child(4) {
+    grid-row: auto;
   }
 }
 
 @media (max-width: 768px) {
-  .services-page {
-    padding-top: 80px;
-  }
-
-  .services-header-section {
-    padding: 4rem 1.5rem 6rem;
-    margin-top: 0;
-  }
-
-  .services-header-section h1 {
-    font-size: 2.2rem;
-  }
-
-  .services-subtitle {
-    font-size: 1.1rem;
-  }
-
   .services-grid {
-    grid-template-columns: 1fr;
     padding: 1rem;
     width: 95%;
-    text-align: center;
-  }
-  
-  .image-container {
-    min-height: 300px;
-  }
-  
-  .overlay p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .services-header-section {
-    padding: 3rem 1rem 4rem;
-    margin-top: 0;
+    gap: 2rem;
   }
 }
 
@@ -465,6 +448,7 @@ main {
   text-align: center;
   margin-bottom: 1rem;
   padding: 0;
+  margin-top: 10px;
 }
 
 .services-header h1 {
@@ -476,6 +460,22 @@ main {
 .services-header p {
   color: #666;
   font-size: 1.2rem;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .services-header {
+    margin-top: 100px;
+    padding: 0 1rem;
+  }
+
+  .services-header h1 {
+    font-size: 2rem;
+  }
+
+  .services-header p {
+    font-size: 1rem;
+  }
 }
 
 .additional-costs {

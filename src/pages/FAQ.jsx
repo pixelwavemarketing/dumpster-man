@@ -11,11 +11,11 @@ function FAQ() {
   const faqData = [
     {
       question: "What sizes of dumpsters do you offer?",
-      answer: "We offer 10, 15, and 20-yard dumpsters to accommodate various project sizes."
+      answer: "We offer 12, 16, 20, and 25-yard dumpsters to accommodate various project sizes."
     },
     {
       question: "How long can I keep the dumpster?",
-      answer: "Our standard rental period is 7 days, but we can be flexible based on your needs."
+      answer: "Our standard rental period is 14 days, but we can be flexible based on your needs."
     },
     {
       question: "What areas do you service?",
@@ -31,7 +31,7 @@ function FAQ() {
     },
     {
       question: "What is your payment policy?",
-      answer: "We will send you an invoice after the dumpster is picked up."
+      answer: "We will send you an invoice after the dumpster is picked up and weighed to asses the cost."
     },
     {
       question: "What items are not accepted?",
