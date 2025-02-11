@@ -15,15 +15,11 @@ function FAQ() {
     },
     {
       question: "How long can I keep the dumpster?",
-      answer: "Our standard rental period is 14 days, but we can be flexible based on your needs."
+      answer: "Our standard rental period is 10 days, but we can be flexible based on your needs."
     },
     {
       question: "What areas do you service?",
       answer: "We service the Capital Region including Mechanicville, Clifton Park, Saratoga Springs, Troy, and surrounding areas."
-    },
-    {
-      question: "What can I put in the dumpster?",
-      answer: "Our dumpsters can handle most household and construction debris. However, hazardous materials, electronics, and certain other items are prohibited."
     },
     {
       question: "Do I need a permit?",
@@ -35,11 +31,11 @@ function FAQ() {
     },
     {
       question: "What items are not accepted?",
-      answer: "We do not accept hazardous materials, electronics, and certain other items. Some items come at a extra charge"
+      answer: "We do not accept hazardous materials, tv's, liquid paint, and certain other items. Some aditional items come at an extra charge"
     },
     {
       question: "Can the dumpster be filled over the top?",
-      answer: "You can fill it up as much as you want, so long as we can get a tarp over it for safe transportation."
+      answer: "No, there is a fill line on the dumpster, but we offer a drop swap service to get you a empty dumpster when picking your full one up."
     },
     {
       question: "Should the dumpster be kept covered?",
@@ -47,7 +43,7 @@ function FAQ() {
     },
     {
       question: "Will the dumpster damage my property?",
-      answer: "No! We will place the dumpster down safely and on blocks of wood to ensure it does not damage your property."
+      answer: "No! We will place the dumpster down safely and on blocks of wood to avoid any damage to your property."
     }
   ];
 
