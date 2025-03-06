@@ -1,0 +1,28 @@
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1877f2; /* Facebook blue */
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.social-icon:hover {
+    background-color: #166fe5; /* Darker shade for hover */
+    transform: translateY(-2px);
+}
+
+.facebook-icon i {
+    font-size: 20px;
+}
+
+.social-media {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
