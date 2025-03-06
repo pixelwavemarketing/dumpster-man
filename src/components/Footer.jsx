@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
   return (
@@ -17,6 +19,16 @@ function Footer() {
           <div className="contact-info">
             <p><a href="tel:+15189202618">(518) 920-2618</a></p>
             <p><a href="mailto:thedumpsterman01@gmail.com">thedumpsterman01@gmail.com</a></p>
+            <div className="social-media">
+              <a 
+                href="https://www.facebook.com/profile.php?id=61558249876337" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="social-icon facebook-icon"
+              >
+                <FontAwesomeIcon icon={faFacebookF} />
+              </a>
+            </div>
           </div>
         </div>
 
