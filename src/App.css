@@ -1885,3 +1885,105 @@ footer {
     line-height: 1.6;
   }
 }
+
+.seo-content {
+  background-color: var(--primary-bg-color); /* Match your primary section background */
+  padding: 4rem 0;
+}
+
+.seo-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.seo-item {
+  text-align: center;
+}
+
+.seo-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.seo-item .section-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.seo-item p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Responsive grid */
+@media (min-width: 768px) {
+  .seo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .seo-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .seo-content {
+    padding: 3rem 0;
+  }
+}
+
+.service-locations ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.business-credentials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.credential-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.seo-grid.two-columns {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1000px;
+  margin: 2rem auto 0;
+  gap: 3rem;
+}
+
+.seo-grid.two-columns .seo-item {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.seo-grid.two-columns .seo-item:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .seo-grid.two-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+}

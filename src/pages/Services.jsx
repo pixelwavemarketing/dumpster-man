@@ -15,10 +15,98 @@ function Services() {
   return (
     <>
       <Helmet>
-        <title>Dumpster Sizes & Pricing | Dumpster Rental in Capital Region</title>
-        <meta name="description" content="Browse our 12, 16, 20, and 25-yard dumpster rental options. Serving The Capital Region with flexible rental terms and competitive rates." />
-        <meta name="keywords" content="dumpster sizes, waste container rental, construction dumpster, yard waste removal" />
+        <title>Dumpster Sizes & Pricing | The Dumpster Man 518</title>
+        <meta name="description" content="Local dumpster rental in Mechanicville, Clifton Park, and Saratoga Springs. 12-25 yard containers with same-day delivery. Best prices in Capital Region." />
+        <meta name="keywords" content="dumpster sizes, dumpster pricing, Mechanicville dumpster rental, construction dumpster, yard waste removal" />
         <link rel="canonical" href="https://thedumpsterman518.com/dumpster-sizes" />
+        
+        {/* Add structured data for products */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "itemListElement": [
+                {
+                  "@type": "Product",
+                  "name": "12 Yard Dumpster",
+                  "description": "Perfect for residential cleanouts and small projects",
+                  "image": "${lot16}",
+                  "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "areaServed": {
+                      "@type": "GeoCircle",
+                      "geoMidpoint": {
+                        "@type": "GeoCoordinates",
+                        "latitude": "42.9153",
+                        "longitude": "-73.6868"
+                      },
+                      "geoRadius": "30"
+                    }
+                  }
+                },
+                {
+                  "@type": "Product",
+                  "name": "16 Yard Dumpster",
+                  "description": "Ideal for medium-sized projects, home renovations, and construction debris removal. Roughly 6 truck beds.",
+                  "image": "${yard16}",
+                  "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "areaServed": {
+                      "@type": "GeoCircle",
+                      "geoMidpoint": {
+                        "@type": "GeoCoordinates",
+                        "latitude": "42.9153",
+                        "longitude": "-73.6868"
+                      },
+                      "geoRadius": "30"
+                    }
+                  }
+                },
+                {
+                  "@type": "Product",
+                  "name": "20 Yard Dumpster",
+                  "description": "Great for larger renovation projects, commercial cleanouts, and heavy construction waste. Roughly 7 truck beds.",
+                  "image": "${yard20}",
+                  "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "areaServed": {
+                      "@type": "GeoCircle",
+                      "geoMidpoint": {
+                        "@type": "GeoCoordinates",
+                        "latitude": "42.9153",
+                        "longitude": "-73.6868"
+                      },
+                      "geoRadius": "30"
+                    }
+                  }
+                },
+                {
+                  "@type": "Product",
+                  "name": "25 Yard Dumpster",
+                  "description": "Our largest option, perfect for major construction projects, large-scale cleanouts, and commercial use. Roughly 8 truck beds.",
+                  "image": "${yard25}",
+                  "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "areaServed": {
+                      "@type": "GeoCircle",
+                      "geoMidpoint": {
+                        "@type": "GeoCoordinates",
+                        "latitude": "42.9153",
+                        "longitude": "-73.6868"
+                      },
+                      "geoRadius": "30"
+                    }
+                  }
+                }
+              ]
+            }
+          `}
+        </script>
       </Helmet>
 
       <div className="services-page">
@@ -90,19 +178,48 @@ function Services() {
 
           <div className="service-area">
             <div className="service-area-content">
-              <h2>Service Area</h2>
+              <h2>Capital Region Service Area</h2>
               <div className="area-info">
                 <i className="location-icon">📍</i>
-                <p>We proudly serve all areas within a <span className="highlight">30-minute radius</span> of Mechanicville, NY</p>
+                <p>Based in <strong>Mechanicville, NY</strong>, serving:</p>
               </div>
-              <div className="area-note">
-                <p>Including surrounding communities in Saratoga County and neighboring areas</p>
-                <p className="extended-area">Need service beyond our standard radius? We can accommodate locations outside our primary service area for an additional fee. Contact us for details.</p>
+              <div className="service-locations">
+                <ul>
+                  <li>Mechanicville</li>
+                  <li>Clifton Park</li>
+                  <li>Saratoga Springs</li>
+                  <li>Troy</li>
+                  <li>Waterford</li>
+                  <li>Stillwater</li>
+                  <li>Round Lake</li>
+                  <li>Malta</li>
+                </ul>
+                <p className="service-note">And all surrounding Capital Region communities</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <section className="seo-content primary-section">
+        <div className="content-wrapper text-center">
+          <h2>Why Choose The Dumpster Man?</h2>
+          <div className="seo-grid two-columns">
+            <div className="seo-item">
+              <h3>Fast Delivery</h3>
+              <div className="section-content">
+                <p>Same-day and next-day delivery available throughout the Capital Region. Our efficient team ensures quick response times for all your waste management needs. Call (518) 920-2618 for immediate service.</p>
+              </div>
+            </div>
+            <div className="seo-item">
+              <h3>Best Price Guarantee</h3>
+              <div className="section-content">
+                <p>We offer competitive pricing with no hidden fees. Our transparent pricing ensures you get the best value for dumpster rental in the Capital Region. Contact us today for a free quote.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

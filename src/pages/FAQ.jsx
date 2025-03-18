@@ -51,10 +51,28 @@ function FAQ() {
   return (
     <>
       <Helmet>
-        <title>Dumpster Rental FAQ | The Dumpster Man NY</title>
-        <meta name="description" content="Find answers about dumpster sizes, rental periods, pricing, and service areas in Mechanicville and Capital Region. Get the information you need." />
-        <meta name="keywords" content="dumpster rental FAQ, waste management questions, dumpster sizes, rental period, pricing" />
+        <title>Dumpster Rental FAQ | The Dumpster Man 518</title>
+        <meta name="description" content="Find answers about dumpster rental in Mechanicville. Learn about sizes, pricing, permits, and accepted materials. Expert waste management guidance." />
+        <meta name="keywords" content="dumpster rental FAQ, waste management questions, Mechanicville dumpster service, dumpster sizes FAQ" />
         <link rel="canonical" href="https://thedumpsterman518.com/faq" />
+        
+        {/* Add structured data for FAQ page */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": ${JSON.stringify(faqData.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer
+                }
+              })))}
+            }
+          `}
+        </script>
       </Helmet>
 
       <div className="faq-container">

@@ -56,10 +56,33 @@ function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact The Dumpster Man | Get a Quote Today</title>
-        <meta name="description" content="Request a quote for dumpster rental in Mechanicville, NY. Fast response times and competitive pricing. Call (518) 920-2618 for immediate service." />
-        <meta name="keywords" content="contact dumpster rental, waste management quote, Mechanicville dumpster service" />
+        <title>Contact The Dumpster Man 518 | Same Day Service</title>
+        <meta name="description" content="Request a dumpster rental quote in Mechanicville. Fast response, same-day delivery available. Call (518) 920-2618 for immediate service." />
+        <meta name="keywords" content="dumpster rental quote, contact dumpster service, Mechanicville waste management, same day dumpster" />
         <link rel="canonical" href="https://thedumpsterman518.com/contact" />
+        
+        {/* Add structured data for contact page */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              "description": "Contact us for dumpster rental services in Mechanicville and surrounding areas",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "The Dumpster Man 518",
+                "telephone": "(518) 920-2618",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "251 Round Lake Road",
+                  "addressLocality": "Mechanicville",
+                  "addressRegion": "NY",
+                  "postalCode": "12118"
+                }
+              }
+            }
+          `}
+        </script>
       </Helmet>
 
       <div className="contact-page">
