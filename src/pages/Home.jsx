@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import heroTruck from '../assets/images/hero-truck.webp'
 import dumpster20 from '../assets/images/20lot.webp'
 import { Link } from 'react-router-dom'
@@ -5,6 +6,13 @@ import { Link } from 'react-router-dom'
 function Home() {
   return (
     <>
+      <Helmet>
+        <title>The Dumpster Man | Mechanicville Waste Management</title>
+        <meta name="description" content="Professional dumpster rental service in Mechanicville, NY. Choose from 12-25 yard containers for residential and commercial projects." />
+        <meta name="keywords" content="dumpster rental, waste management, Mechanicville NY, construction waste, residential dumpster" />
+        <link rel="canonical" href="https://thedumpsterman518.com" />
+      </Helmet>
+      
       <div className="hero-section">
         <img 
           src={heroTruck} 

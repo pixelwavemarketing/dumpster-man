@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import '../App.css';
 
 function FAQ() {
@@ -48,27 +49,36 @@ function FAQ() {
   ];
 
   return (
-    <div className="faq-container">
-      <h1>Frequently Asked Questions</h1>
-      
-      <div className="faq-section">
-        {faqData.map((faq, index) => (
-          <div 
-            key={index} 
-            className={`faq-item ${activeIndex === index ? 'active' : ''}`}
-            onClick={() => toggleQuestion(index)}
-          >
-            <div className="faq-question">
-              <h3>{faq.question}</h3>
-              <span className="faq-icon">{activeIndex === index ? '−' : '+'}</span>
+    <>
+      <Helmet>
+        <title>Dumpster Rental FAQ | The Dumpster Man NY</title>
+        <meta name="description" content="Find answers about dumpster sizes, rental periods, pricing, and service areas in Mechanicville and Capital Region. Get the information you need." />
+        <meta name="keywords" content="dumpster rental FAQ, waste management questions, dumpster sizes, rental period, pricing" />
+        <link rel="canonical" href="https://thedumpsterman518.com/faq" />
+      </Helmet>
+
+      <div className="faq-container">
+        <h1>Frequently Asked Questions</h1>
+        
+        <div className="faq-section">
+          {faqData.map((faq, index) => (
+            <div 
+              key={index} 
+              className={`faq-item ${activeIndex === index ? 'active' : ''}`}
+              onClick={() => toggleQuestion(index)}
+            >
+              <div className="faq-question">
+                <h3>{faq.question}</h3>
+                <span className="faq-icon">{activeIndex === index ? '−' : '+'}</span>
+              </div>
+              <div className={`faq-answer ${activeIndex === index ? 'show' : ''}`}>
+                <p>{faq.answer}</p>
+              </div>
             </div>
-            <div className={`faq-answer ${activeIndex === index ? 'show' : ''}`}>
-              <p>{faq.answer}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

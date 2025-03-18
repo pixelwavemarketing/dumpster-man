@@ -7,23 +7,26 @@ import Home from './pages/Home.jsx';
 import Services from './pages/Services.jsx';
 import Contact from './pages/Contact.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 import './App.css';
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dumpster-sizes" element={<Services />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dumpster-sizes" element={<Services />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 
