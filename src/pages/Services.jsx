@@ -15,8 +15,8 @@ function Services() {
   return (
     <>
       <Helmet>
-        <title>Dumpster Sizes & Pricing | The Dumpster Man Capital Region</title>
-        <meta name="description" content="Browse our 12, 16, 20, and 25-yard dumpster options. Serving Mechanicville and Capital Region with flexible rental terms and competitive rates." />
+        <title>Dumpster Sizes & Pricing | Dumpster Rental in Capital Region</title>
+        <meta name="description" content="Browse our 12, 16, 20, and 25-yard dumpster rental options. Serving The Capital Region with flexible rental terms and competitive rates." />
         <meta name="keywords" content="dumpster sizes, waste container rental, construction dumpster, yard waste removal" />
         <link rel="canonical" href="https://thedumpsterman518.com/dumpster-sizes" />
       </Helmet>
