@@ -2051,3 +2051,21 @@ footer {
     font-size: 1rem;
   }
 }
+
+.dual-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .dual-buttons {
+    gap: 1rem;
+  }
+  
+  .dual-buttons .cta-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}

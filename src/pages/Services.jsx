@@ -177,15 +177,19 @@ function Services() {
             </div>
           </div>
 
-          <div className="cta-section">
+          <section className="full-width-section primary-section">
             <div className="content-wrapper text-center">
               <h2>Ready to Get Started?</h2>
-              <p>Contact us today for a free quote and exceptional service</p>
-              <Link to="/contact" className="cta-button">
-                Get Your Dumpster Today →
-              </Link>
+              <div className="section-content">
+                <p>Contact us today for a free quote and exceptional service</p>
+              </div>
+              <div className="cta-container">
+                <Link to="/contact" className="cta-button">
+                  Get Your Dumpster Today →
+                </Link>
+              </div>
             </div>
-          </div>
+          </section>
 
           <div className="service-area">
             <div className="service-area-content">

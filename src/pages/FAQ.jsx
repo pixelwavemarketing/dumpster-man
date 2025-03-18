@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 function FAQ() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -95,6 +96,23 @@ function FAQ() {
             </div>
           ))}
         </div>
+
+        <section className="full-width-section primary-section">
+          <div className="content-wrapper text-center">
+            <h2>Ready to Get Started?</h2>
+            <div className="section-content">
+              <p>View our dumpster sizes or contact us for a quote today</p>
+            </div>
+            <div className="cta-container dual-buttons">
+              <Link to="/dumpster-sizes" className="cta-button">
+                View Dumpster Sizes →
+              </Link>
+              <Link to="/contact" className="cta-button">
+                Get Your Quote →
+              </Link>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );
