@@ -4,6 +4,7 @@ import lot16 from '../assets/images/16lot.webp'
 import yard16 from '../assets/images/16.webp'
 import yard20 from '../assets/images/20.webp'
 import yard25 from '../assets/images/25.webp'
+import { Link } from 'react-router-dom'
 
 function Services() {
   const [activeIndex, setActiveIndex] = useState(null)
@@ -173,6 +174,16 @@ function Services() {
                   <li>Paint cans must be completely dry</li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          <div className="cta-section">
+            <div className="content-wrapper text-center">
+              <h2>Ready to Get Started?</h2>
+              <p>Contact us today for a free quote and exceptional service</p>
+              <Link to="/contact" className="cta-button">
+                Get Your Dumpster Today →
+              </Link>
             </div>
           </div>
 

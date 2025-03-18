@@ -201,7 +201,7 @@ function Contact() {
               </div>
             </div>
 
-            <button type="submit" className="submit-button">
+            <button type="submit" className="cta-button">
               Send Message
             </button>
           </form>
@@ -211,7 +211,7 @@ function Contact() {
               <span className="phone-icon">📞</span>
               <h3>Need a Faster Response?</h3>
               <p>For faster assistance, please give us a call!</p>
-              <a href="tel:+15189202618" className="phone-button">
+              <a href="tel:+15189202618" className="cta-button">
                 (518) 920-2618
               </a>
             </div>

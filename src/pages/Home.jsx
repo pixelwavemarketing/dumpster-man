@@ -65,7 +65,7 @@ function Home() {
             </p>
           </div>
           <div className="cta-container">
-            <Link to="/contact" className="cta-button primary">
+            <Link to="/contact" className="cta-button">
               Contact Us Today →
             </Link>
           </div>
@@ -88,7 +88,7 @@ function Home() {
               </p>
             </div>
             <div className="cta-container">
-              <Link to="/dumpster-sizes" className="cta-button secondary">
+              <Link to="/dumpster-sizes" className="cta-button">
                 View All Sizes →
               </Link>
             </div>
