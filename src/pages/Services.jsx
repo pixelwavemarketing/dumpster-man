@@ -15,7 +15,7 @@ function Services() {
   return (
     <>
       <Helmet>
-        <title>Dumpster Sizes & Pricing | The Dumpster Man NY</title>
+        <title>Dumpster Sizes & Pricing | The Dumpster Man Capital Region</title>
         <meta name="description" content="Browse our 12, 16, 20, and 25-yard dumpster options. Serving Mechanicville and Capital Region with flexible rental terms and competitive rates." />
         <meta name="keywords" content="dumpster sizes, waste container rental, construction dumpster, yard waste removal" />
         <link rel="canonical" href="https://thedumpsterman518.com/dumpster-sizes" />
@@ -56,9 +56,9 @@ function Services() {
                   className={`image-container ${activeIndex === index ? 'active' : ''}`}
                   onClick={() => handleClick(index)}
                 >
-                  <img src={item.img} alt={item.title} />
+                  <img src={item.img} alt={item.title} loading="lazy" />
                   <div className="overlay">
-                    <p>{item.desc}</p>
+                    <p className="service-description">{item.desc}</p>
                   </div>
                 </div>
                 <h3>{item.title}</h3>

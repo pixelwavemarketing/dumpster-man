@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>The Dumpster Man | Mechanicville Waste Management</title>
+        <title>The Dumpster Man 518 | Capital Region Waste Management</title>
         <meta name="description" content="Professional dumpster rental service in Mechanicville, NY. Choose from 12-25 yard containers for residential and commercial projects." />
         <meta name="keywords" content="dumpster rental, waste management, Mechanicville NY, construction waste, residential dumpster" />
         <link rel="canonical" href="https://thedumpsterman518.com" />
