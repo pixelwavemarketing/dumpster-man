@@ -56,8 +56,8 @@ function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact The Dumpster Man 518 | Same Day Service</title>
-        <meta name="description" content="Request a dumpster rental quote in Mechanicville. Fast response, same-day delivery available. Call (518) 920-2618 for immediate service." />
+        <title>Contact for Dumpster Rental | The Dumpster Man 518</title>
+        <meta name="description" content="Get a quote for dumpster rental in Mechanicville and Capital Region. Fast response times, competitive rates. Call (518) 920-2618 today." />
         <meta name="keywords" content="dumpster rental quote, contact dumpster service, Mechanicville waste management, same day dumpster" />
         <link rel="canonical" href="https://thedumpsterman518.com/contact" />
         

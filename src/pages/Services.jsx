@@ -16,10 +16,10 @@ function Services() {
   return (
     <>
       <Helmet>
-        <title>Dumpster Sizes & Pricing | The Dumpster Man 518</title>
-        <meta name="description" content="Local dumpster rental in Mechanicville, Clifton Park, and Saratoga Springs. 12-25 yard containers with same-day delivery. Best prices in Capital Region." />
+        <title>Dumpster Rental Sizes & Pricing | The Dumpster Man 518</title>
+        <meta name="description" content="Choose from 12-25 yard dumpsters in Mechanicville. Perfect for construction, cleanouts, and yard waste. Competitive pricing and same-day delivery." />
         <meta name="keywords" content="dumpster sizes, dumpster pricing, Mechanicville dumpster rental, construction dumpster, yard waste removal" />
-        <link rel="canonical" href="https://thedumpsterman518.com/dumpster-sizes" />
+        <link rel="canonical" href="https://thedumpsterman518.com/services" />
         
         {/* Add structured data for products */}
         <script type="application/ld+json">

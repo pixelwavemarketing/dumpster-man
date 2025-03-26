@@ -53,7 +53,7 @@ function FAQ() {
     <>
       <Helmet>
         <title>Dumpster Rental FAQ | The Dumpster Man 518</title>
-        <meta name="description" content="Find answers about dumpster rental in Mechanicville. Learn about sizes, pricing, permits, and accepted materials. Expert waste management guidance." />
+        <meta name="description" content="Find answers about dumpster sizes, rental periods, pricing, and service areas. Expert guidance for waste management in the Capital Region." />
         <meta name="keywords" content="dumpster rental FAQ, waste management questions, Mechanicville dumpster service, dumpster sizes FAQ" />
         <link rel="canonical" href="https://thedumpsterman518.com/faq" />
         

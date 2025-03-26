@@ -7,8 +7,8 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>Dumpster Rental Mechanicville NY | Same Day Service | The Dumpster Man</title>
-        <meta name="description" content="Local dumpster rental in Mechanicville & Capital Region. Same-day delivery available. 12-25 yard containers for residential & commercial use. Call (518) 920-2618." />
+        <title>The Dumpster Man 518 | Capital Region Waste Services</title>
+        <meta name="description" content="Local dumpster rental in Mechanicville & Capital Region. Same-day delivery, multiple sizes available. Professional waste management services." />
         <meta name="keywords" content="dumpster rental, waste management, Mechanicville NY, Capital Region, same day dumpster rental, construction waste, residential dumpster" />
         <link rel="canonical" href="https://thedumpsterman518.com" />
         
