@@ -7,14 +7,20 @@ import Home from './pages/Home.jsx';
 import Services from './pages/Services.jsx';
 import Contact from './pages/Contact.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
+import PerformanceMonitor from './components/PerformanceMonitor.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import './App.css';
+import './styles/buttons.css';
+import './styles/layouts.css';
+import './styles/navigation.css';
+import './styles/mobile.css';
 
 function App() {
   return (
     <HelmetProvider>
       <Router>
         <ScrollToTop />
+        <PerformanceMonitor />
         <div className="App">
           <Header />
           <Routes>

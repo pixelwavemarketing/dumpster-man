@@ -1,0 +1,369 @@
+/* Mobile Layout Fixes */
+
+/* Reduce header size on mobile */
+@media (max-width: 768px) {
+  .header {
+    padding: 0.5rem 0;
+  }
+  
+  .header-content {
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+  
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    min-width: 90px;
+  }
+}
+
+/* Fix main content padding for mobile */
+@media (max-width: 768px) {
+  main {
+    padding-top: 120px; /* Increased to account for header height */
+  }
+  
+  .services-page {
+    padding-top: 0;
+  }
+  
+  .services-spacer {
+    height: 100px; /* Increased to provide proper spacing */
+  }
+}
+
+/* Fix Services page mobile layout */
+@media (max-width: 768px) {
+  .services-header {
+    padding: 3rem 1rem 2rem;
+    margin-top: 0;
+  }
+  
+  .services-header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .services-header p {
+    font-size: 1rem;
+  }
+  
+  .page-container {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+  }
+  
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    gap: 1.5rem;
+  }
+  
+  .service-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .service-item h3 {
+    padding: 1rem 1rem 0.5rem;
+    font-size: 1.3rem;
+  }
+  
+  /* Fix mobile image container and overlay */
+  .image-container {
+    aspect-ratio: 4/3; /* Increase height for mobile */
+    min-height: 200px;
+  }
+  
+  .overlay {
+    padding: 1rem;
+  }
+  
+  .overlay p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    max-height: 80%;
+    overflow-y: auto;
+  }
+  
+  .additional-costs {
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+  }
+  
+  .additional-costs h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .costs-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .costs-section {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  .costs-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .service-area {
+    margin: 2rem 1rem 0;
+    padding: 1.5rem;
+  }
+  
+  .service-area h2 {
+    font-size: 1.8rem;
+  }
+  
+  .service-locations ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .service-locations li {
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+}
+
+/* FAQ mobile optimizations */
+@media (max-width: 768px) {
+  .faq-container {
+    padding: 2rem 1rem;
+  }
+  
+  .faq-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .faq-item {
+    margin-bottom: 1rem;
+  }
+  
+  .faq-question h3 {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+  
+  .faq-icon {
+    font-size: 1.2rem;
+  }
+  
+  .faq-answer.show {
+    padding: 0 1rem 1rem;
+  }
+  
+  .faq-answer p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+/* Contact page mobile optimizations */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 2rem 1rem;
+  }
+  
+  .contact-header {
+    padding: 2rem 1rem;
+  }
+  
+  .contact-header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+  
+  .contact-form-container {
+    padding: 1rem;
+  }
+  
+  .contact-form {
+    padding: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .submit-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .quick-contact-section {
+    padding: 2rem 1rem;
+  }
+  
+  .quick-contact-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .quick-contact-content p {
+    font-size: 1rem;
+  }
+  
+  .phone-button {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Hero section mobile optimizations */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 50vh;
+    min-height: 300px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .full-width-section {
+    padding: 3rem 1rem;
+  }
+  
+  .full-width-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small screen optimizations */
+@media (max-width: 480px) {
+  .header-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .image-container {
+    aspect-ratio: 3/2;
+    min-height: 180px;
+  }
+  
+  .overlay p {
+    font-size: 0.85rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+  
+  .nav-links a {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+    min-width: 80px;
+  }
+  
+  main {
+    padding-top: 140px;
+  }
+  
+  .services-spacer {
+    height: 120px;
+  }
+  
+  .faq-container {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .contact-page {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .page-container {
+    margin: 0.5rem auto;
+    padding: 0 0.25rem;
+  }
+  
+  .services-grid {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .contact-form {
+    padding: 1rem;
+  }
+  
+  .full-width-section {
+    padding: 2rem 0.5rem;
+  }
+}
+
+/* Content wrapper and SEO optimizations */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 0 1rem;
+  }
+  
+  .seo-content {
+    padding: 2rem 1rem;
+  }
+  
+  .seo-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .seo-item h3 {
+    font-size: 1.2rem;
+  }
+  
+  .seo-item p {
+    font-size: 0.95rem;
+  }
+  
+  .cta-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .dual-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dual-buttons .cta-button {
+    width: 100%;
+    max-width: 300px;
+  }
+} 

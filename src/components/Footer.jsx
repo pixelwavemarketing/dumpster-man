@@ -3,30 +3,30 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { faYelp } from '@fortawesome/free-brands-svg-icons';
+import siteConfig from '../config/siteConfig.js';
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>The Dumpster Man</h3>
+          <h3>{siteConfig.company.name}</h3>
           <p className="company-description">
-            Your trusted waste management solution based out of Mechanicville, NY
+            Your trusted waste management solution based out of {siteConfig.company.address.city}, {siteConfig.company.address.state}
           </p>
         </div>
         
         <div className="footer-section contact-section">
           <h4>Contact Us</h4>
           <div className="contact-info">
-            <p><a href="tel:+15189202618">(518) 920-2618</a></p>
-            <p><a href="mailto:thedumpsterman01@gmail.com">thedumpsterman01@gmail.com</a></p>
-            <div className="social-media" style={{ display: 'flex', gap: '1rem', alignItems: 'center', justifyContent: 'center', marginTop: '0.5rem' }}>
+            <a href={`tel:${siteConfig.company.phone}`}>{siteConfig.company.phone}</a>
+            <a href="mailto:thedumpsterman01@gmail.com">thedumpsterman01@gmail.com</a>
+            <div className="social-media">
               <a 
                 href="https://www.facebook.com/profile.php?id=61558249876337" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="social-icon facebook-icon"
-                style={{ fontSize: '1.5rem' }}
               >
                 <FontAwesomeIcon icon={faFacebookF} />
               </a>
@@ -35,7 +35,6 @@ function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="social-icon yelp-icon"
-                style={{ fontSize: '1.5rem' }}
               >
                 <FontAwesomeIcon icon={faYelp} />
               </a>
@@ -46,23 +45,22 @@ function Footer() {
         <div className="footer-section">
           <h4>Quick Links</h4>
           <nav className="footer-nav">
-            <Link to="/">Home</Link>
-            <Link to="/dumpster-sizes">Dumpster Sizes</Link>
-            <Link to="/faq">FAQ</Link>
-            <Link to="/contact">Contact</Link>
+            {siteConfig.navigation.map((item, index) => (
+              <Link key={index} to={item.path}>{item.label}</Link>
+            ))}
           </nav>
         </div>
-
-        <div className="footer-bottom">
-          <a 
-            href="https://usepixelwave.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="creator-link"
-          >
-            Website built by Pixelwave Marketing
-          </a>
-        </div>
+      </div>
+      
+      <div className="footer-bottom">
+        <a 
+          href="https://usepixelwave.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="creator-link"
+        >
+          Website built by Pixelwave Marketing
+        </a>
       </div>
     </footer>
   );

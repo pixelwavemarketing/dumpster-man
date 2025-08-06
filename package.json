@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:prod": "vite build --mode production",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "optimize": "node scripts/optimize-images.js",
+    "analyze": "vite build --mode analyze"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",

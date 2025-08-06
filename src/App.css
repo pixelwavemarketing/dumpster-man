@@ -256,7 +256,7 @@ p {
 }
 
 main {
-  padding-top: 60px;
+  padding-top: 100px; /* Increased to account for fixed header */
   min-height: calc(100vh - 80px);
 }
 
@@ -308,47 +308,36 @@ main {
   opacity: 0.5;
 }
 
+/* Update services grid to use flexbox */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 600px));
-  grid-template-rows: auto auto; /* Two explicit rows */
-  gap: 4rem;
-  padding: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: center;
-}
-
-/* Target first two items for first row */
-.service-item:nth-child(1),
-.service-item:nth-child(2) {
-  grid-row: 1;
-}
-
-/* Target last two items for second row */
-.service-item:nth-child(3),
-.service-item:nth-child(4) {
-  grid-row: 2;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .service-item {
-  background: #ffffff;
-  border-radius: 12px;
+  flex: 1 1 300px;
+  max-width: 400px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-item:hover {
   transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 .service-item h2 {
-  color: #1e3a8a;
-  padding: 1.5rem;
-  margin: 0;
+  color: #333;
+  margin: 1rem;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .service-item p {
@@ -440,17 +429,14 @@ main {
 /* Add new breakpoint for medium screens */
 @media (max-width: 1200px) {
   .services-grid {
-    grid-template-columns: minmax(0, 600px);
-    grid-template-rows: auto;
-    gap: 3rem;
+    /* Remove old grid styles */
   }
-
-  /* Remove row assignments for mobile */
+  
   .service-item:nth-child(1),
   .service-item:nth-child(2),
   .service-item:nth-child(3),
   .service-item:nth-child(4) {
-    grid-row: auto;
+    /* Remove old grid row assignments */
   }
 }
 
@@ -475,12 +461,14 @@ main {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   margin-top: -50px;
+  color: #1e3a8a;
+  font-weight: 700;
 }
 
 .header-underline {
   width: 100px;
   height: 4px;
-  background: #2563eb;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
   margin: 1rem auto;
   border-radius: 2px;
 }
@@ -489,6 +477,7 @@ main {
   color: #4b5563;
   max-width: 800px;
   margin: 0 auto;
+  font-size: 1.1rem;
 }
 
 /* Mobile styles */
@@ -524,13 +513,17 @@ main {
   font-size: 2rem;
 }
 
+/* Update costs grid to use flexbox */
 .costs-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
+  justify-content: center;
 }
 
 .costs-section {
+  flex: 1 1 300px;
+  max-width: 500px;
   background-color: white;
   padding: 1.5rem;
   border-radius: 8px;
@@ -776,6 +769,7 @@ main {
   .cta-button {
     padding: 1rem 2rem;
     font-size: 1.1rem;
+    min-width: 180px;
   }
 }
 
@@ -906,42 +900,41 @@ main {
   }
 }
 
+/* Footer styles */
 .footer {
   background-color: #333;
   color: white;
-  padding: 2rem 0;
-  margin-top: auto;
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
 }
 
 .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
+  align-items: flex-start;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
 }
 
 /* Left section - Company info */
 .footer-section:first-child {
+  flex: 0 0 300px;
   text-align: left;
-  flex: 1;
-  min-width: 250px;
 }
 
 /* Middle section - Contact info */
 .contact-section {
+  flex: 0 0 250px;
   text-align: center;
-  flex: 1;
-  min-width: 250px;
 }
 
 /* Right section - Quick links */
 .footer-section:nth-child(3) {
+  flex: 0 0 200px;
   text-align: right;
-  flex: 1;
-  min-width: 250px;
 }
 
 .footer-section h3 {
@@ -979,10 +972,30 @@ main {
   color: #007bff;
 }
 
+.social-media {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-icon {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #007bff;
+}
+
 .footer-nav {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
   gap: 1.5rem;
+  align-items: center;
+  justify-content: flex-end;
   flex-wrap: wrap;
 }
 
@@ -990,6 +1003,7 @@ main {
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .footer-nav a:hover {
@@ -1002,6 +1016,11 @@ main {
   padding-top: 2rem;
   margin-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .creator-link {
@@ -1015,26 +1034,61 @@ main {
   color: white;
 }
 
+/* Mobile footer adjustments */
 @media (max-width: 768px) {
-  .footer-content {
-    padding: 0 1rem;
-    flex-direction: column;
+  .footer {
+    padding: 2rem 0 1rem;
   }
-
+  
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
   .footer-section:first-child,
   .contact-section,
   .footer-section:nth-child(3) {
+    flex: 1 1 100%;
+    max-width: 100%;
     text-align: center;
   }
-
+  
   .company-description {
     max-width: 100%;
-    margin: 0.5rem auto;
   }
-
-  .footer-nav {
+  
+  .social-media {
     justify-content: center;
-    gap: 1rem;
+  }
+  
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+  
+  .contact-info a {
+    font-size: 1rem;
+  }
+  
+  .footer-nav a {
+    font-size: 0.95rem;
+  }
+  
+  .footer-bottom {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -1075,24 +1129,25 @@ main {
 }
 
 .contact-header h1 {
-  font-size: 3.2rem;
-  color: #333;
+  font-size: 2.5rem;
+  color: #1e3a8a;
   margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
+  font-weight: 700;
 }
 
 .contact-header .header-underline {
-  width: 120px;
-  height: 3px;
-  background: linear-gradient(to right, #333, #666);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
   margin: 0 auto 2rem;
   border-radius: 2px;
 }
 
 .contact-subtitle {
-  font-size: 1.4rem;
-  color: #666;
+  font-size: 1.1rem;
+  color: #4b5563;
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
@@ -1532,7 +1587,29 @@ main {
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1rem;
-  margin-top: 100px;
+  margin-top: 160px; /* Increased to account for fixed header */
+}
+
+.faq-container h1 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #1e3a8a;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.faq-container h1::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border-radius: 2px;
 }
 
 .faq-section {
@@ -1862,33 +1939,44 @@ footer {
   padding: 4rem 0;
 }
 
+/* Update seo grid to use flexbox */
 .seo-grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
+  justify-content: center;
   margin-top: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .seo-item {
-  text-align: center;
+  flex: 1 1 300px;
+  max-width: 400px;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  will-change: transform;
+}
+
+.seo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
 .seo-item h3 {
-  color: var(--primary-color);
+  color: var(--text-color);
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .seo-item .section-content {
-  max-width: 800px;
-  margin: 0 auto;
+  margin-top: 1rem;
 }
 
 .seo-item p {
+  color: var(--light-text);
   line-height: 1.6;
-  margin-bottom: 1rem;
 }
 
 /* Responsive grid */
@@ -1910,52 +1998,68 @@ footer {
 }
 
 .service-locations ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
   list-style: none;
   padding: 0;
-  margin: 2rem 0;
-  text-align: center;
+  margin: 1rem 0;
+}
+
+.service-locations li {
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  color: #333;
 }
 
 .business-credentials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
   margin: 2rem 0;
 }
 
 .credential-item {
-  text-align: center;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  flex: 1 1 200px;
+  max-width: 300px;
+  background: white;
+  padding: 1rem;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: center;
 }
 
+/* Update two-column seo grid */
 .seo-grid.two-columns {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 1000px;
-  margin: 2rem auto 0;
-  gap: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
 
 .seo-grid.two-columns .seo-item {
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  flex: 1 1 400px;
+  max-width: 500px;
 }
 
 .seo-grid.two-columns .seo-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {
   .seo-grid.two-columns {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .seo-grid.two-columns .seo-item {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 

@@ -1,88 +1,60 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import siteConfig from '../config/siteConfig.js';
+import StructuredData from '../components/StructuredData.jsx';
 
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    streetAddress: '',
-    city: '',
+    address: '',
     dumpsterSize: '',
-  })
-  const [showSuccess, setShowSuccess] = useState(false)
+    message: ''
+  });
+
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    // Here you would typically send the form data to your backend
+    console.log('Form submitted:', formData);
+    setShowSuccess(true);
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      address: '',
+      dumpsterSize: '',
+      message: ''
+    });
     
-    // Create FormData object
-    const form = e.target
-    const formData = new FormData(form)
-
-    // Submit to Netlify
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => {
-        setShowSuccess(true)
-        // Reset form
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          streetAddress: '',
-          city: '',
-          dumpsterSize: '',
-        })
-      })
-      .catch((error) => console.log(error))
-  }
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 5000);
+  };
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    // Hide success message when user starts typing in a new form
-    if (showSuccess) {
-      setShowSuccess(false)
-    }
-    
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
-    }))
-  }
+    }));
+  };
 
   return (
     <>
       <Helmet>
-        <title>Contact for Dumpster Rental | The Dumpster Man 518</title>
-        <meta name="description" content="Get a quote for dumpster rental in Mechanicville and Capital Region. Fast response times, competitive rates. Call (518) 920-2618 today." />
-        <meta name="keywords" content="dumpster rental quote, contact dumpster service, Mechanicville waste management, same day dumpster" />
-        <link rel="canonical" href="https://thedumpsterman518.com/contact" />
+        <title>{siteConfig.seoContent.contact.title}</title>
+        <meta name="description" content={siteConfig.seoContent.contact.description} />
+        <meta name="keywords" content={siteConfig.seoContent.contact.keywords} />
+        <link rel="canonical" href="https://thedumpsterman518.com/contact/" />
         
-        {/* Add structured data for contact page */}
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "ContactPage",
-              "description": "Contact us for dumpster rental services in Mechanicville and surrounding areas",
-              "mainEntity": {
-                "@type": "Organization",
-                "name": "The Dumpster Man 518",
-                "telephone": "(518) 920-2618",
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": "251 Round Lake Road",
-                  "addressLocality": "Mechanicville",
-                  "addressRegion": "NY",
-                  "postalCode": "12118"
-                }
-              }
-            }
-          `}
-        </script>
+                        {/* Add structured data for contact page */}
+                <script type="application/ld+json">
+                  {StructuredData({ type: "organization" })}
+                </script>
       </Helmet>
 
       <div className="contact-page">
@@ -93,6 +65,8 @@ function Contact() {
             Get in touch with us today for a free quote and exceptional service
           </p>
         </div>
+
+
 
         <div className="contact-form-container">
           {showSuccess && (
@@ -154,72 +128,73 @@ function Contact() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="your@email.com"
+                required
+                placeholder="your.email@example.com"
               />
             </div>
 
-            <div className="form-group address-container">
-              <label>Address</label>
-              <div className="address-inputs">
-                <input
-                  type="text"
-                  id="streetAddress"
-                  name="streetAddress"
-                  value={formData.streetAddress}
-                  onChange={handleChange}
-                  placeholder="Street Address"
-                  className="street-input"
-                />
-                <input
-                  type="text"
-                  id="city"
-                  name="city"
-                  value={formData.city}
-                  onChange={handleChange}
-                  placeholder="City"
-                  className="city-input"
-                />
-              </div>
+            <div className="form-group">
+              <label htmlFor="address">Address</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                placeholder="Your Address"
+              />
             </div>
 
             <div className="form-group">
-              <label>Preferred Dumpster Size *</label>
-              <div className="radio-group">
-                {['12', '16', '20', '25', 'Not Sure'].map((size) => (
-                  <label key={size} className="radio-label">
-                    <input
-                      type="radio"
-                      name="dumpsterSize"
-                      value={size}
-                      checked={formData.dumpsterSize === size}
-                      onChange={handleChange}
-                      required
-                    />
-                    <span>{size} {size !== 'Not Sure' ? 'Yard' : ''}</span>
-                  </label>
+              <label htmlFor="dumpsterSize">Dumpster Size</label>
+              <select
+                id="dumpsterSize"
+                name="dumpsterSize"
+                value={formData.dumpsterSize}
+                onChange={handleChange}
+              >
+                <option value="">Select a size</option>
+                {siteConfig.dumpsters.map((dumpster) => (
+                  <option key={dumpster.id} value={dumpster.name}>
+                    {dumpster.name}
+                  </option>
                 ))}
-              </div>
+              </select>
             </div>
 
-            <button type="submit" className="cta-button">
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows="4"
+                placeholder="Tell us about your project..."
+              ></textarea>
+            </div>
+
+            <button type="submit" className="submit-button">
               Send Message
             </button>
           </form>
-
-          <div className="quick-contact-section">
-            <div className="quick-contact-content">
-              <span className="phone-icon">📞</span>
-              <h3>Need a Faster Response?</h3>
-              <p>For faster assistance, please give us a call!</p>
-              <a href="tel:+15189202618" className="cta-button">
-                (518) 920-2618
-              </a>
-            </div>
-          </div>
         </div>
+
+
+
+        <section className="quick-contact-section">
+          <div className="quick-contact-content">
+            <div className="phone-icon">📞</div>
+            <h3>Need immediate assistance?</h3>
+            <p>Call us directly at {siteConfig.company.phone}</p>
+            <a href={`tel:${siteConfig.company.phone}`} className="phone-button">
+              Call Now
+            </a>
+          </div>
+        </section>
       </div>
     </>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

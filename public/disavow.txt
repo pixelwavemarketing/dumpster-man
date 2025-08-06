@@ -1,0 +1,19 @@
+# Disavow file for thedumpsterman518.com
+# Remove toxic backlinks that are hurting SEO
+
+# Spammy SEO sites
+Domain: seo-tip.com
+Domain: bitcoinmix.biz
+Domain: ejjii.com
+Domain: backlink.wiki
+Domain: vickys.design
+Domain: domain.gov.mex.com
+Domain: weknow.website
+Domain: wants.cfd
+Domain: knows.sbs
+Domain: seodomains.website
+
+# Additional spam domains to monitor
+Domain: monster
+Domain: sbs
+Domain: website 

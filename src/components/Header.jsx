@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import siteConfig from '../config/siteConfig.js';
 
 function Header() {
   return (
@@ -8,14 +9,13 @@ function Header() {
       <div className="header-content">
         <div className="logo">
           <Link to="/">
-            <h1>The Dumpster Man</h1>
+            <h1>{siteConfig.company.name}</h1>
           </Link>
         </div>
         <nav className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/dumpster-sizes">Dumpster Sizes</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/contact">Contact</Link>
+          {siteConfig.navigation.map((item, index) => (
+            <Link key={index} to={item.path}>{item.label}</Link>
+          ))}
         </nav>
       </div>
     </header>
