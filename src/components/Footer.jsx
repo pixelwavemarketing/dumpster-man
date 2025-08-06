@@ -1,8 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
-import { faYelp } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import siteConfig from '../config/siteConfig.js';
 
 function Footer() {
@@ -28,7 +26,7 @@ function Footer() {
                 rel="noopener noreferrer" 
                 className="social-icon facebook-icon"
               >
-                <FontAwesomeIcon icon={faFacebookF} />
+                <FontAwesomeIcon icon={faFacebook} />
               </a>
               <a 
                 href="https://www.yelp.com/biz/the-dumpster-man-mechanicville?osq=the+dumpster+man&override_cta=Get+pricing" 
@@ -36,7 +34,7 @@ function Footer() {
                 rel="noopener noreferrer" 
                 className="social-icon yelp-icon"
               >
-                <FontAwesomeIcon icon={faYelp} />
+                Yelp
               </a>
             </div>
           </div>

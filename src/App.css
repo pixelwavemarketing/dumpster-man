@@ -80,7 +80,7 @@ p {
 
 .hero-section {
   background: linear-gradient(to right, rgba(30, 58, 138, 0.9), rgba(37, 99, 235, 0.9)),
-              url('../assets/images/hero-bg.webp') center/cover;
+              url('../assets/images/hero-truck.webp') center/cover;
   padding: 8rem 2rem 4rem;
   color: white;
   text-align: center;
@@ -428,16 +428,7 @@ main {
 
 /* Add new breakpoint for medium screens */
 @media (max-width: 1200px) {
-  .services-grid {
-    /* Remove old grid styles */
-  }
-  
-  .service-item:nth-child(1),
-  .service-item:nth-child(2),
-  .service-item:nth-child(3),
-  .service-item:nth-child(4) {
-    /* Remove old grid row assignments */
-  }
+  /* Styles for medium screens can be added here if needed */
 }
 
 @media (max-width: 768px) {

@@ -51,10 +51,10 @@ function Contact() {
         <meta name="keywords" content={siteConfig.seoContent.contact.keywords} />
         <link rel="canonical" href="https://thedumpsterman518.com/contact/" />
         
-                        {/* Add structured data for contact page */}
-                <script type="application/ld+json">
-                  {StructuredData({ type: "organization" })}
-                </script>
+        {/* Add structured data for contact page */}
+        <script type="application/ld+json">
+          {StructuredData({ type: "organization" })}
+        </script>
       </Helmet>
 
       <div className="contact-page">
@@ -66,15 +66,13 @@ function Contact() {
           </p>
         </div>
 
-
-
         <div className="contact-form-container">
           {showSuccess && (
             <div className="success-message">
               <div className="success-content">
                 <span className="success-icon">✓</span>
                 <p>Thank you! Your message has been sent successfully.</p>
-                <p className="success-subtitle">We'll get back to you soon!</p>
+                <p className="success-subtitle">We&apos;ll get back to you soon!</p>
               </div>
             </div>
           )}
@@ -85,12 +83,12 @@ function Contact() {
             name="contact"
             method="POST"
             data-netlify="true"
-            netlify-honeypot="bot-field"
+            data-netlify-honeypot="bot-field"
           >
             <input type="hidden" name="form-name" value="contact" />
             <p className="hidden">
               <label>
-                Don't fill this out if you're human: <input name="bot-field" />
+                Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
               </label>
             </p>
             
@@ -179,8 +177,6 @@ function Contact() {
             </button>
           </form>
         </div>
-
-
 
         <section className="quick-contact-section">
           <div className="quick-contact-content">

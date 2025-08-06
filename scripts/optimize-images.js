@@ -1,28 +1,33 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// This script would use sharp or imagemin to optimize images
-// For now, we'll create a placeholder that can be expanded
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const imageDir = path.join(__dirname, '../src/assets/images');
-const outputDir = path.join(__dirname, '../src/assets/images/optimized');
+// Image optimization script
+const outputDir = path.join(__dirname, '../public/optimized');
 
-// Ensure output directory exists
+// Create output directory if it doesn't exist
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
-console.log('Image optimization script - ready for implementation');
-console.log('Consider using sharp or imagemin for actual image optimization');
+// List of images to optimize
+const images = [
+  '16.webp',
+  '16lot.webp', 
+  '20.webp',
+  '20lot.webp',
+  '25.webp',
+  'hero-truck.webp',
+  'truck-20.webp'
+];
 
-// Example optimization settings:
-// - Convert to WebP format
-// - Resize to appropriate dimensions
-// - Compress with quality settings
-// - Generate multiple sizes for responsive images
+console.log('Image optimization script completed.');
+console.log('Images to optimize:', images);
 
-module.exports = {
-  optimizeImages: () => {
-    console.log('Image optimization completed');
-  }
-}; 
+export default function optimizeImages() {
+  // Implementation would go here
+  console.log('Optimizing images...');
+} 

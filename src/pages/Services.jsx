@@ -26,33 +26,6 @@ function Services() {
     setActiveIndex(activeIndex === index ? null : index)
   }
 
-  // Generate structured data from config
-  const generateStructuredData = () => {
-    return {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": siteConfig.dumpsters.map((dumpster, index) => ({
-        "@type": "Product",
-        "name": dumpster.name,
-        "description": dumpster.description,
-        "image": imageMap[dumpster.id],
-        "offers": {
-          "@type": "Offer",
-          "availability": "https://schema.org/InStock",
-          "areaServed": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": siteConfig.company.coordinates.latitude,
-              "longitude": siteConfig.company.coordinates.longitude
-            },
-            "geoRadius": "30"
-          }
-        }
-      }))
-    }
-  }
-
   return (
     <>
       <Helmet>

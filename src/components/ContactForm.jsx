@@ -20,7 +20,7 @@ function ContactForm() {
       } else {
         alert('Form submission failed. Please try again.');
       }
-    } catch (error) {
+    } catch {
       alert('Error submitting form. Please try again.');
     }
   };
@@ -39,14 +39,14 @@ function ContactForm() {
       name="contact" 
       method="POST" 
       data-netlify="true"
-      netlify-honeypot="bot-field"
+      data-netlify-honeypot="bot-field"
       className="contact-form"
       onSubmit={handleSubmit}
     >
       <input type="hidden" name="form-name" value="contact" />
       <p hidden>
         <label>
-          Don't fill this out: <input name="bot-field" />
+          Don&apos;t fill this out: <input name="bot-field" />
         </label>
       </p>
       

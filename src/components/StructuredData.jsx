@@ -1,8 +1,48 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import siteConfig from '../config/siteConfig.js';
 
-// Enhanced Structured Data for AI Search Engines
-export const generateLocalBusinessSchema = () => {
+// Component to inject structured data
+const StructuredData = ({ type = 'localBusiness' }) => {
+  const getSchema = () => {
+    try {
+      switch (type) {
+        case 'localBusiness':
+          return generateLocalBusinessSchema();
+        case 'service':
+          return generateServiceSchema();
+        case 'faq':
+          return generateFAQSchema();
+        case 'product':
+          return generateProductSchema();
+        case 'organization':
+          return generateOrganizationSchema();
+        case 'aiOptimized':
+          return generateAIOptimizedSchema();
+        default:
+          return generateLocalBusinessSchema();
+      }
+    } catch (error) {
+      console.error('Error generating schema:', error);
+      return {};
+    }
+  };
+
+  const schema = getSchema();
+  
+  if (!schema || Object.keys(schema).length === 0) {
+    return null;
+  }
+
+  // Return the JSON string directly for use in Helmet
+  return JSON.stringify(schema);
+};
+
+StructuredData.propTypes = {
+  type: PropTypes.oneOf(['localBusiness', 'service', 'faq', 'product', 'organization', 'aiOptimized'])
+};
+
+// Schema generation functions
+function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -69,9 +109,9 @@ export const generateLocalBusinessSchema = () => {
       "https://www.yelp.com/biz/the-dumpster-man-mechanicville"
     ]
   };
-};
+}
 
-export const generateServiceSchema = () => {
+function generateServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -94,9 +134,9 @@ export const generateServiceSchema = () => {
       }
     }))
   };
-};
+}
 
-export const generateFAQSchema = () => {
+function generateFAQSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -109,9 +149,9 @@ export const generateFAQSchema = () => {
       }
     }))
   };
-};
+}
 
-export const generateProductSchema = () => {
+function generateProductSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -159,9 +199,9 @@ export const generateProductSchema = () => {
       }
     }))
   };
-};
+}
 
-export const generateOrganizationSchema = () => {
+function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -180,10 +220,9 @@ export const generateOrganizationSchema = () => {
       "https://www.yelp.com/biz/the-dumpster-man-mechanicville"
     ]
   };
-};
+}
 
-// AI-Optimized Schema for GPT Search and other AI engines
-export const generateAIOptimizedSchema = () => {
+function generateAIOptimizedSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -214,42 +253,6 @@ export const generateAIOptimizedSchema = () => {
     "email": siteConfig.company.email,
     "url": siteConfig.company.website
   };
-};
-
-// Component to inject structured data
-const StructuredData = ({ type = 'localBusiness' }) => {
-  const getSchema = () => {
-    try {
-      switch (type) {
-        case 'localBusiness':
-          return generateLocalBusinessSchema();
-        case 'service':
-          return generateServiceSchema();
-        case 'faq':
-          return generateFAQSchema();
-        case 'product':
-          return generateProductSchema();
-        case 'organization':
-          return generateOrganizationSchema();
-        case 'aiOptimized':
-          return generateAIOptimizedSchema();
-        default:
-          return generateLocalBusinessSchema();
-      }
-    } catch (error) {
-      console.error('Error generating schema:', error);
-      return {};
-    }
-  };
-
-  const schema = getSchema();
-  
-  if (!schema || Object.keys(schema).length === 0) {
-    return null;
-  }
-
-  // Return the JSON string directly for use in Helmet
-  return JSON.stringify(schema);
-};
+}
 
 export default StructuredData; 

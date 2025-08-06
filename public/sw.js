@@ -2,8 +2,6 @@ const CACHE_NAME = 'dumpsterman-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/static/js/bundle.js',
-  '/static/css/main.css',
   '/manifest.json',
   '/favicon.ico'
 ];
@@ -21,11 +19,31 @@ self.addEventListener('install', event => {
 
 // Fetch event - serve from cache when offline
 self.addEventListener('fetch', event => {
+  // Skip non-GET requests
+  if (event.request.method !== 'GET') {
+    return;
+  }
+
+  // Skip non-HTTP(S) requests
+  if (!event.request.url.startsWith('http')) {
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request)
       .then(response => {
         // Return cached version or fetch from network
         return response || fetch(event.request);
+      })
+      .catch(() => {
+        // If both cache and network fail, return a fallback
+        return new Response('Offline content not available', {
+          status: 503,
+          statusText: 'Service Unavailable',
+          headers: new Headers({
+            'Content-Type': 'text/plain',
+          }),
+        });
       })
   );
 });

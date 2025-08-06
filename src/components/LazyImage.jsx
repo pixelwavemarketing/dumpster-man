@@ -1,15 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 function LazyImage({ src, alt, ...props }) {
-  const [imageSrc, setImageSrc] = useState(null)
+  const [imageSrc, setImageSrc] = useState(null);
 
   useEffect(() => {
-    const img = new Image()
-    img.src = src
+    const img = new Image();
+    img.src = src;
     img.onload = () => {
-      setImageSrc(src)
-    }
-  }, [src])
+      setImageSrc(src);
+    };
+  }, [src]);
 
   return (
     <img 
@@ -19,7 +20,12 @@ function LazyImage({ src, alt, ...props }) {
       decoding="async"
       {...props}
     />
-  )
+  );
 }
 
-export default LazyImage 
+LazyImage.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired
+};
+
+export default LazyImage; 
