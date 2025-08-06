@@ -33,8 +33,10 @@ function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="social-icon yelp-icon"
+                aria-label="Visit us on Yelp"
+                style={{ fontWeight: 'bold', fontSize: '1.2em' }}
               >
-                Yelp
+                Y
               </a>
             </div>
           </div>
