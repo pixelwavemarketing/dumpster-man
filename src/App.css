@@ -79,23 +79,29 @@ p {
 }
 
 .hero-section {
-  background: linear-gradient(to right, rgba(30, 58, 138, 0.9), rgba(37, 99, 235, 0.9)),
-              url('../assets/images/hero-truck.webp') center/cover;
+  position: relative;
   padding: 8rem 2rem 4rem;
   color: white;
   text-align: center;
+  overflow: hidden;
+  margin-top: 80px; /* Account for fixed header */
+  height: 600px; /* Fixed height for desktop */
 }
 
 .hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  display: block;
-  margin: 0;
-  padding: 0;
+  z-index: 1;
+  filter: none;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 3;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -429,6 +435,13 @@ main {
 /* Add new breakpoint for medium screens */
 @media (max-width: 1200px) {
   /* Styles for medium screens can be added here if needed */
+}
+
+/* Desktop hero section - larger screens */
+@media (min-width: 1200px) {
+  .hero-section {
+    height: 700px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1493,12 +1506,15 @@ main {
 
 @media (max-width: 480px) {
   .hero-section {
-    max-height: 250px;
-    margin-top: 20px;
+    padding: 1.5rem 1rem 0.5rem;
+    margin-top: 80px;
+    height: 20vh;
+    min-height: 150px;
   }
 
   .hero-image {
-    height: 250px;
+    height: 100%;
+    object-position: center;
   }
 
   .hero-content {
@@ -1906,7 +1922,7 @@ footer {
 @media (max-width: 768px) {
   .full-width-section.primary-section {
     padding: 2rem 1rem;
-    margin-top: 7rem; /* Increased spacing on mobile */
+    margin-top: 2rem; /* Reduced from 7rem to shrink blue space */
   }
 
   .content-wrapper h2 {

@@ -33,6 +33,17 @@ function Home() {
           sizes="100vw"
         />
       </div>
+      
+      {/* Mobile-only hero image */}
+      <div className="mobile-hero-image">
+        <OptimizedImage 
+          src={heroTruck} 
+          alt="Dumpster Man truck with trailer in snow" 
+          className="mobile-hero-img"
+          priority={true}
+          sizes="100vw"
+        />
+      </div>
 
       {/* About Section */}
       <section className="full-width-section primary-section">
@@ -51,24 +62,28 @@ function Home() {
 
       {/* Services Section */}
       <section className="full-width-section secondary-section">
-        <div className="content-wrapper with-image">
-          <div className="text-content text-center">
-            <h2>Comprehensive Dumpster Rental Services in Albany NY</h2>
-            <div className="section-content">
-              <p>Our comprehensive dumpster rental services are designed to handle projects of all sizes. From small residential cleanouts to large commercial construction projects, we have the right dumpster size for your needs. Each dumpster comes with our commitment to safe, professional delivery and pickup.</p>
-            </div>
-            <div className="cta-container">
-              <Link to="/dumpster-sizes" className="cta-button">
-                View All Sizes →
-              </Link>
-            </div>
+        <div className="content-wrapper text-center">
+          <h2>Comprehensive Dumpster Rental Services in Albany NY</h2>
+          <div className="section-content">
+            <p>Our comprehensive dumpster rental services are designed to handle projects of all sizes. From small residential cleanouts to large commercial construction projects, we have the right dumpster size for your needs. Each dumpster comes with our commitment to safe, professional delivery and pickup.</p>
           </div>
-          <div className="image-wrapper">
+          <div className="cta-container">
+            <Link to="/dumpster-sizes" className="cta-button">
+              View All Sizes →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Section */}
+      <section className="full-width-section primary-section">
+        <div className="content-wrapper text-center">
+          <div className="image-wrapper" style={{ maxWidth: '600px', margin: '0 auto' }}>
             <OptimizedImage 
               src={dumpster20} 
               alt="20 yard dumpster" 
               className="section-image"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, 600px"
             />
           </div>
         </div>

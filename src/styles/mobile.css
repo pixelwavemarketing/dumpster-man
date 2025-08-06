@@ -239,23 +239,37 @@
   }
 }
 
+/* Mobile hero image - replaces desktop hero section */
+.mobile-hero-image {
+  display: none;
+}
+
+.mobile-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Hero section mobile optimizations */
 @media (max-width: 768px) {
   .hero-section {
-    height: 50vh;
-    min-height: 300px;
+    display: none; /* Hide desktop hero section on mobile */
   }
   
-  .hero-content h1 {
-    font-size: 2rem;
+  .mobile-hero-image {
+    display: block; /* Show mobile hero image */
+    margin-top: 80px; /* Account for fixed header */
   }
   
-  .hero-content p {
-    font-size: 1rem;
+  .mobile-hero-img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
   }
   
   .full-width-section {
-    padding: 3rem 1rem;
+    padding: 1.5rem 1rem;
   }
   
   .full-width-section h2 {
@@ -323,7 +337,11 @@
   }
   
   .full-width-section {
-    padding: 2rem 0.5rem;
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .mobile-hero-img {
+    max-height: 150px;
   }
 }
 
