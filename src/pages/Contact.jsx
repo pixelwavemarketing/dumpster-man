@@ -188,6 +188,39 @@ function Contact() {
             </a>
           </div>
         </section>
+
+        {/* Contact Process Section */}
+        <section className="full-width-section primary-section">
+          <div className="content-wrapper text-center">
+            <h2>Simple and Efficient Dumpster Rental Process</h2>
+            <div className="section-content">
+              <p>Our dumpster rental process is designed to be simple and efficient, getting you the equipment you need when you need it. The process begins with a consultation where we discuss your project requirements, timeline, and budget. Our team helps you select the appropriate dumpster size and provides detailed pricing information. Once you approve the quote, we schedule delivery at your convenience, with same-day delivery available for urgent projects.</p>
+              <p>Our professional team handles all aspects of delivery and pickup, ensuring safe placement and removal of the dumpster. Throughout your rental period, our customer service team is available to answer questions and provide support. We also handle all waste disposal and recycling, ensuring environmentally responsible disposal of your project materials. From initial contact to final pickup, we make the entire process seamless and stress-free.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Areas Section */}
+        <section className="full-width-section secondary-section">
+          <div className="content-wrapper text-center">
+            <h2>Comprehensive Service Coverage in the Capital Region</h2>
+            <div className="section-content">
+              <p>We provide reliable dumpster rental services throughout Mechanicville NY and the surrounding Capital Region, including Albany, Clifton Park, Saratoga Springs, Troy, Ballston Spa, Stillwater, Waterford, Round Lake, Malta, Halfmoon, Schaghticoke, Valley Falls, Hoosick Falls, Greenwich, Cambridge, Cohoes, Watervliet, and Latham. Our local knowledge and community connections enable us to provide personalized service and quick response times throughout the region.</p>
+              <p>Being a local company means we understand the unique challenges of projects in the Capital Region, from seasonal weather considerations to local permit requirements. Our team is familiar with the area's regulations and can help you navigate any necessary permits or restrictions for your specific location. We're committed to maintaining the beauty and cleanliness of our community through responsible waste management practices.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Customer Support Section */}
+        <section className="full-width-section primary-section">
+          <div className="content-wrapper text-center">
+            <h2>Exceptional Customer Support and Guidance</h2>
+            <div className="section-content">
+              <p>Our customer support team is dedicated to providing exceptional service and guidance throughout your dumpster rental experience. We understand that every project has unique requirements, and our team takes the time to understand your specific needs before recommending the best dumpster solution. From initial consultation to final pickup, we provide clear communication and reliable service that you can count on.</p>
+              <p>Our experienced team is knowledgeable about local regulations, permit requirements, and project planning considerations specific to the Capital Region. We provide detailed guidance on dumpster placement, loading techniques, and project timelines to help ensure your project runs smoothly. Whether you're a first-time customer or a returning client, you'll receive the same level of professional, courteous service that has made us a trusted name in Mechanicville NY waste management.</p>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

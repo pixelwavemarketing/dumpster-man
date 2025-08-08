@@ -84,6 +84,28 @@ function Services() {
             </div>
           </section>
 
+          {/* Pricing Information Section */}
+          <section className="full-width-section primary-section">
+            <div className="content-wrapper text-center">
+              <h2>Transparent Pricing for Mechanicville NY Dumpster Rental</h2>
+              <div className="section-content">
+                <p>We believe in transparent pricing with no hidden fees, ensuring you know exactly what your dumpster rental will cost. Our pricing is competitive within the Mechanicville NY market and varies based on dumpster size, rental duration, and project location. We offer flexible rental periods to accommodate your project timeline, and our team works with you to find the most cost-effective solution for your specific needs.</p>
+                <p>Additional fees may apply for certain items like mattresses and tires, and we provide clear information about these charges upfront. For projects outside our standard service area, we offer extended service with additional fees clearly communicated. Our goal is to provide exceptional value while maintaining the high-quality service our customers expect. Contact us today for a detailed quote tailored to your specific project requirements.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Project Planning Section */}
+          <section className="full-width-section secondary-section">
+            <div className="content-wrapper text-center">
+              <h2>Expert Project Planning and Guidance</h2>
+              <div className="section-content">
+                <p>Choosing the right dumpster size is crucial for the success of your project and your budget. Our comprehensive guide helps you understand the capacity, dimensions, and best uses for each dumpster size we offer. The 12-yard dumpster is ideal for small residential projects like garage cleanouts or minor renovations, while the 16-yard option works well for medium-sized home renovations and construction debris removal.</p>
+                <p>For larger projects, our 20-yard dumpsters handle commercial cleanouts and major renovations, and our 25-yard dumpsters are perfect for large-scale construction and demolition projects. Each size is designed with specific project types in mind, ensuring you get the most efficient and cost-effective solution for your needs. Our experienced team provides personalized guidance to help you choose the perfect dumpster size for your specific project requirements.</p>
+              </div>
+            </div>
+          </section>
+
           <div className="additional-costs">
             <h2>Additional Fees & Restrictions</h2>
             <div className="costs-grid">

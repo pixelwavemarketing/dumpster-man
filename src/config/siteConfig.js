@@ -183,27 +183,27 @@ export const siteConfig = {
   // SEO Content - Enhanced for AI search engines
   seoContent: {
     home: {
-      title: "Dumpster Rental Albany NY | The Dumpster Man Capital Region - Same Day Delivery",
-      description: "Professional dumpster rental in Albany NY and Capital Region. Same-day delivery, competitive pricing. 12-25 yard dumpsters for residential & commercial projects. Call (518) 920-2618 today!",
-      keywords: "dumpster rental albany ny, capital region dumpster rental, same day dumpster delivery, construction dumpster rental, residential dumpster rental, commercial dumpster rental, waste management albany ny",
-      aiKeywords: ["dumpster rental", "waste removal", "construction debris", "residential cleanout", "commercial waste", "same day delivery", "albany ny", "capital region"]
+      title: "Dumpster Rental Mechanicville NY | The Dumpster Man - Same Day Delivery",
+      description: "Professional dumpster rental in Mechanicville NY and Capital Region. Same-day delivery, competitive pricing. 12-25 yard dumpsters for residential & commercial projects. Call (518) 920-2618!",
+      keywords: "dumpster rental mechanicville ny, capital region dumpster rental, same day dumpster delivery, construction dumpster rental, residential dumpster rental, commercial dumpster rental, waste management mechanicville ny",
+      aiKeywords: ["dumpster rental", "waste removal", "construction debris", "residential cleanout", "commercial waste", "same day delivery", "mechanicville ny", "capital region"]
     },
     services: {
-      title: "Dumpster Sizes & Pricing Albany NY | 12-25 Yard Dumpsters - The Dumpster Man",
-      description: "Choose from 12-25 yard dumpsters in Albany NY and Capital Region. Competitive pricing, same-day delivery. Perfect for construction, cleanouts, and yard waste. Get your quote today!",
-      keywords: "dumpster sizes albany ny, dumpster pricing capital region, 12 yard dumpster, 16 yard dumpster, 20 yard dumpster, 25 yard dumpster, construction waste removal",
+      title: "Dumpster Sizes & Pricing Mechanicville NY | 12-25 Yard Dumpsters - The Dumpster Man",
+      description: "Choose from 12-25 yard dumpsters in Mechanicville NY and Capital Region. Competitive pricing, same-day delivery. Perfect for construction, cleanouts, and yard waste. Get your quote today!",
+      keywords: "dumpster sizes mechanicville ny, dumpster pricing capital region, 12 yard dumpster, 16 yard dumpster, 20 yard dumpster, 25 yard dumpster, construction waste removal",
       aiKeywords: ["dumpster sizes", "pricing", "construction waste", "residential projects", "commercial projects", "waste disposal"]
     },
     contact: {
-      title: "Contact Dumpster Rental Albany NY | Free Quote - The Dumpster Man",
-      description: "Get a free dumpster rental quote in Albany NY and Capital Region. Fast response, competitive rates. Same-day delivery available. Call (518) 920-2618 for immediate service!",
-      keywords: "dumpster rental quote albany ny, contact dumpster service, same day dumpster delivery, waste management quote, construction dumpster rental",
+      title: "Contact Dumpster Rental Mechanicville NY | Free Quote - The Dumpster Man",
+      description: "Get a free dumpster rental quote in Mechanicville NY and Capital Region. Fast response, competitive rates. Same-day delivery available. Call (518) 920-2618 for immediate service!",
+      keywords: "dumpster rental quote mechanicville ny, contact dumpster service, same day dumpster delivery, waste management quote, construction dumpster rental",
       aiKeywords: ["quote", "contact", "same day delivery", "waste management", "construction services"]
     },
     faq: {
-      title: "Dumpster Rental FAQ Albany NY | Common Questions - The Dumpster Man",
-      description: "Find answers about dumpster rental in Albany NY. Permits, pricing, service areas, and more. Expert guidance for waste management in the Capital Region. Call (518) 920-2618!",
-      keywords: "dumpster rental faq albany ny, dumpster permit requirements, dumpster pricing questions, waste management faq, construction dumpster questions",
+      title: "Dumpster Rental FAQ Mechanicville NY | Common Questions - The Dumpster Man",
+      description: "Find answers about dumpster rental in Mechanicville NY. Permits, pricing, service areas, and more. Expert guidance for waste management in the Capital Region. Call (518) 920-2618!",
+      keywords: "dumpster rental faq mechanicville ny, dumpster permit requirements, dumpster pricing questions, waste management faq, construction dumpster questions",
       aiKeywords: ["FAQ", "permit requirements", "pricing", "service areas", "waste management"]
     }
   },
@@ -258,26 +258,26 @@ export const siteConfig = {
   contentSections: {
     home: {
       hero: {
-        title: "Professional Dumpster Rental in Albany NY & Capital Region",
+        title: "Professional Dumpster Rental in Mechanicville NY & Capital Region",
         subtitle: "Same-Day Delivery • Competitive Pricing • Local Service",
-        description: "The Dumpster Man provides reliable, professional dumpster rental services throughout Albany NY and the Capital Region. With same-day delivery, competitive pricing, and multiple dumpster sizes, we're your trusted partner for all waste management needs. Whether you're tackling a home renovation, construction project, or residential cleanout, our experienced team ensures efficient service and exceptional customer care."
+        description: "The Dumpster Man provides reliable, professional dumpster rental services throughout Mechanicville NY and the Capital Region. With same-day delivery, competitive pricing, and multiple dumpster sizes, we're your trusted partner for all waste management needs. Whether you're tackling a home renovation, construction project, or residential cleanout, our experienced team ensures efficient service and exceptional customer care."
       },
       about: {
-        title: "Your Trusted Waste Management Partner in Albany NY",
+        title: "Your Trusted Waste Management Partner in Mechanicville NY",
         content: "Based in Mechanicville, NY, The Dumpster Man has been serving the Capital Region for years, building a reputation for reliability, professionalism, and exceptional customer service. Our commitment to the local community drives everything we do, from providing same-day delivery to offering competitive pricing that fits your budget. We understand that every project is unique, which is why we offer flexible dumpster sizes and personalized service to meet your specific needs. Our experienced team is knowledgeable about local regulations and can help you navigate permit requirements, ensuring your project runs smoothly from start to finish."
       },
       services: {
-        title: "Comprehensive Dumpster Rental Services in Albany NY",
+        title: "Comprehensive Dumpster Rental Services in Mechanicville NY",
         content: "Our comprehensive dumpster rental services are designed to handle projects of all sizes. From small residential cleanouts to large commercial construction projects, we have the right dumpster size for your needs. Our 12-yard dumpsters are perfect for garage cleanouts and small remodeling projects, while our 25-yard dumpsters can handle major construction and demolition projects. Each dumpster comes with our commitment to safe, professional delivery and pickup, ensuring your project stays on schedule. We also offer flexible rental periods and can accommodate urgent requests with our same-day delivery service."
       },
       benefits: {
-        title: "Why Choose The Dumpster Man for Your Albany NY Project",
+        title: "Why Choose The Dumpster Man for Your Mechanicville NY Project",
         content: "When you choose The Dumpster Man for your dumpster rental needs, you're choosing a local company that understands the unique challenges of projects in the Capital Region. Our same-day delivery service means you can start your project immediately, without waiting for equipment to arrive. Our competitive pricing ensures you get the best value for your money, with no hidden fees or surprise charges. We're committed to environmental responsibility and work with local waste processing facilities to ensure proper disposal of all materials. Our customer service team is available to answer questions and provide guidance throughout your rental period."
       }
     },
     services: {
       overview: {
-        title: "Complete Guide to Dumpster Sizes and Pricing in Albany NY",
+        title: "Complete Guide to Dumpster Sizes and Pricing in Mechanicville NY",
         content: "Choosing the right dumpster size is crucial for the success of your project and your budget. Our comprehensive guide helps you understand the capacity, dimensions, and best uses for each dumpster size we offer. The 12-yard dumpster is ideal for small residential projects like garage cleanouts or minor renovations, while the 16-yard option works well for medium-sized home renovations and construction debris removal. For larger projects, our 20-yard dumpsters handle commercial cleanouts and major renovations, and our 25-yard dumpsters are perfect for large-scale construction and demolition projects. Each size is designed with specific project types in mind, ensuring you get the most efficient and cost-effective solution for your needs."
       },
       detailedInfo: {
@@ -285,23 +285,23 @@ export const siteConfig = {
         content: "Understanding dumpster specifications helps you plan your project more effectively. Our 12-yard dumpsters measure 8' x 6' x 4' and can hold approximately 2-3 tons of material, making them perfect for residential projects with limited space. The 16-yard dumpsters measure 12' x 8' x 4' and can handle 3-4 tons, ideal for kitchen remodels and bathroom renovations. Our 20-yard dumpsters measure 14' x 8' x 4' and can accommodate 4-5 tons, suitable for large renovations and commercial projects. The largest option, our 25-yard dumpsters measure 16' x 8' x 4' and can handle 5-6 tons, perfect for major construction and demolition projects. Each dumpster comes with clear fill lines and our team provides guidance on proper loading to maximize capacity and ensure safe transport."
       },
       pricing: {
-        title: "Transparent Pricing and Cost Considerations for Albany NY Projects",
-        content: "We believe in transparent pricing with no hidden fees, ensuring you know exactly what your dumpster rental will cost. Our pricing is competitive within the Albany NY market and varies based on dumpster size, rental duration, and project location. We offer flexible rental periods to accommodate your project timeline, and our team works with you to find the most cost-effective solution for your specific needs. Additional fees may apply for certain items like mattresses and tires, and we provide clear information about these charges upfront. For projects outside our standard service area, we offer extended service with additional fees clearly communicated. Our goal is to provide exceptional value while maintaining the high-quality service our customers expect."
+        title: "Transparent Pricing and Cost Considerations for Mechanicville NY Projects",
+        content: "We believe in transparent pricing with no hidden fees, ensuring you know exactly what your dumpster rental will cost. Our pricing is competitive within the Mechanicville NY market and varies based on dumpster size, rental duration, and project location. We offer flexible rental periods to accommodate your project timeline, and our team works with you to find the most cost-effective solution for your specific needs. Additional fees may apply for certain items like mattresses and tires, and we provide clear information about these charges upfront. For projects outside our standard service area, we offer extended service with additional fees clearly communicated. Our goal is to provide exceptional value while maintaining the high-quality service our customers expect."
       }
     },
     contact: {
       overview: {
-        title: "Get Your Free Dumpster Rental Quote in Albany NY",
+        title: "Get Your Free Dumpster Rental Quote in Mechanicville NY",
         content: "Ready to start your project? Contact The Dumpster Man today for a free, no-obligation quote on your dumpster rental. Our experienced team will help you choose the right dumpster size for your project and provide detailed pricing information. We understand that every project is unique, which is why we take the time to understand your specific needs and requirements. Whether you're planning a residential renovation, commercial construction project, or residential cleanout, our team provides personalized service and expert guidance. We're available to answer questions about dumpster sizes, rental periods, permit requirements, and any other concerns you may have about your waste management needs."
       },
       process: {
-        title: "Simple and Efficient Dumpster Rental Process in Albany NY",
+        title: "Simple and Efficient Dumpster Rental Process in Mechanicville NY",
         content: "Our dumpster rental process is designed to be simple and efficient, getting you the equipment you need when you need it. The process begins with a consultation where we discuss your project requirements, timeline, and budget. Our team helps you select the appropriate dumpster size and provides detailed pricing information. Once you approve the quote, we schedule delivery at your convenience, with same-day delivery available for urgent projects. Our professional team handles all aspects of delivery and pickup, ensuring safe placement and removal of the dumpster. Throughout your rental period, our customer service team is available to answer questions and provide support. We also handle all waste disposal and recycling, ensuring environmentally responsible disposal of your project materials."
       }
     },
     faq: {
       overview: {
-        title: "Frequently Asked Questions About Dumpster Rental in Albany NY",
+        title: "Frequently Asked Questions About Dumpster Rental in Mechanicville NY",
         content: "We understand that dumpster rental can raise many questions, especially for first-time customers. Our comprehensive FAQ section addresses the most common concerns about dumpster sizes, pricing, permits, and service areas. Whether you're wondering about the right dumpster size for your project, concerned about permit requirements, or curious about our service area coverage, you'll find detailed answers here. We've organized our FAQs by category to help you quickly find the information you need. Our team is also available by phone to answer any additional questions and provide personalized guidance for your specific project requirements."
       },
       detailed: {
@@ -353,24 +353,24 @@ export const siteConfig = {
   // SEO Strategy for Backlink Recovery and AI Optimization
   seoStrategy: {
     localBusiness: {
-      name: "The Dumpster Man Albany NY",
-      serviceArea: "Albany NY, Capital Region, Mechanicville, Clifton Park, Saratoga Springs, Troy",
+      name: "The Dumpster Man Mechanicville NY",
+      serviceArea: "Mechanicville NY, Capital Region, Albany, Clifton Park, Saratoga Springs, Troy",
       services: [
-        "Dumpster Rental Albany NY",
+        "Dumpster Rental Mechanicville NY",
         "Construction Waste Removal",
         "Residential Cleanout Services",
         "Commercial Dumpster Rental",
         "Same Day Dumpster Delivery"
       ],
       keywords: [
-        "dumpster rental albany ny",
+        "dumpster rental mechanicville ny",
         "capital region dumpster rental",
         "same day dumpster delivery",
         "construction dumpster rental",
         "residential dumpster rental",
         "commercial dumpster rental",
-        "waste management albany ny",
-        "dumpster sizes albany ny",
+        "waste management mechanicville ny",
+        "dumpster sizes mechanicville ny",
         "dumpster pricing capital region"
       ]
     },

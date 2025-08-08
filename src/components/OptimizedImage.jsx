@@ -84,7 +84,7 @@ const OptimizedImage = ({
       {!isLoaded && (
         <img
           src={placeholder}
-          alt=""
+          alt="Loading placeholder"
           className="image-placeholder"
           style={{
             position: 'absolute',
