@@ -32,7 +32,7 @@ function Services() {
         <title>{siteConfig.seoContent.services.title}</title>
         <meta name="description" content={siteConfig.seoContent.services.description} />
         <meta name="keywords" content={siteConfig.seoContent.services.keywords} />
-        <link rel="canonical" href="https://thedumpsterman518.com/dumpster-sizes/" />
+        <link rel="canonical" href="https://thedumpsterman518.com/dumpster-sizes" />
         
         <script type="application/ld+json">
           {StructuredData({ type: "product" })}

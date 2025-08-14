@@ -10,9 +10,9 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>{siteConfig.seoContent.home.title}</title>
-        <meta name="description" content={siteConfig.seoContent.home.description} />
-        <meta name="keywords" content={siteConfig.seoContent.home.keywords} />
+        <title>Capital Region Dumpster Rental | Same-Day Delivery Mechanicville NY - The Dumpster Man</title>
+        <meta name="description" content="Capital Region dumpster rental with same-day delivery in Mechanicville, Clifton Park, Ballston Spa & Halfmoon NY. Get competitive pricing on 12-25 yard dumpsters. Call (518) 920-2618!" />
+        <meta name="keywords" content="capital region dumpster rental, dumpster rental mechanicville, dumpster rental clifton park ny, dumpster rental ballston spa ny, dumpster rental halfmoon, the dumpster man, same day delivery" />
         <link rel="canonical" href="https://thedumpsterman518.com/" />
         
         {/* Add structured data for local business */}
@@ -32,6 +32,27 @@ function Home() {
           priority={true}
           sizes="100vw"
         />
+        {/* Hero Content Overlay */}
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1>Capital Region Dumpster Rental</h1>
+            <h2>Same-Day Delivery • Competitive Pricing • Local Service</h2>
+            <p className="hero-subtitle">Serving Mechanicville, Clifton Park, Ballston Spa, Halfmoon & Capital Region</p>
+            <div className="hero-cta-buttons">
+              <Link to="/contact" className="cta-button primary">
+                Get Free Quote →
+              </Link>
+              <Link to="/dumpster-sizes" className="cta-button secondary">
+                View Dumpster Sizes →
+              </Link>
+            </div>
+            <div className="hero-features">
+              <span className="feature">✓ Same-Day Delivery</span>
+              <span className="feature">✓ Competitive Pricing</span>
+              <span className="feature">✓ Local Service</span>
+            </div>
+          </div>
+        </div>
       </div>
       
       {/* Mobile-only hero image */}
@@ -44,6 +65,8 @@ function Home() {
           sizes="100vw"
         />
       </div>
+
+
 
       {/* About Section */}
       <section className="full-width-section primary-section">
@@ -88,27 +111,47 @@ function Home() {
         </div>
       </section>
 
-      {/* Project Types Section */}
+
+
+
+
+      {/* Testimonials Section */}
       <section className="full-width-section secondary-section">
         <div className="content-wrapper text-center">
-          <h2>Dumpster Rental for Every Project Type</h2>
-          <div className="section-content">
-            <p>Whether you're planning a residential renovation, commercial construction project, or simple cleanout, we have the perfect dumpster solution for your needs. Our residential services include home renovations, garage cleanouts, basement clearing, yard waste removal, and estate sales. For commercial clients, we handle construction debris, office cleanouts, retail renovations, and large-scale demolition projects.</p>
-            <p>We also specialize in construction and demolition waste, including concrete, drywall, lumber, roofing materials, and other construction debris. Our team understands the specific requirements for different types of waste and can help you choose the right dumpster size and rental period for your project timeline. We work with contractors, property managers, and individual homeowners to ensure every project receives the attention and service it deserves.</p>
+          <h2>What Our Capital Region Customers Say</h2>
+          <div className="testimonials-grid">
+            <div className="testimonial-item">
+              <div className="testimonial-content">
+                <p>"The Dumpster Man delivered our dumpster same-day when we needed it for a last-minute renovation. Great service and competitive pricing!"</p>
+                <div className="testimonial-author">
+                  <strong>Sarah M.</strong>
+                  <span>Mechanicville, NY</span>
+                </div>
+              </div>
+            </div>
+            <div className="testimonial-item">
+              <div className="testimonial-content">
+                <p>"Professional service from start to finish. They helped us choose the right dumpster size and the delivery was on time. Highly recommend!"</p>
+                <div className="testimonial-author">
+                  <strong>Mike R.</strong>
+                  <span>Clifton Park, NY</span>
+                </div>
+              </div>
+            </div>
+            <div className="testimonial-item">
+              <div className="testimonial-content">
+                <p>"Best dumpster rental service in the Capital Region. Fair pricing, reliable delivery, and excellent customer service."</p>
+                <div className="testimonial-author">
+                  <strong>Jennifer L.</strong>
+                  <span>Ballston Spa, NY</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Image Section */}
-      <section className="full-width-section primary-section">
-        <div className="content-wrapper text-center">
-          <div className="image-wrapper" style={{ maxWidth: '600px', margin: '0 auto' }}>
-            <OptimizedImage 
-              src={dumpster20} 
-              alt="20 yard dumpster" 
-              className="section-image"
-              sizes="(max-width: 768px) 100vw, 600px"
-            />
+          <div className="cta-container">
+            <Link to="/contact" className="cta-button">
+              Get Your Free Quote Today →
+            </Link>
           </div>
         </div>
       </section>

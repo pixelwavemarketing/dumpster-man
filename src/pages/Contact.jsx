@@ -49,7 +49,7 @@ function Contact() {
         <title>{siteConfig.seoContent.contact.title}</title>
         <meta name="description" content={siteConfig.seoContent.contact.description} />
         <meta name="keywords" content={siteConfig.seoContent.contact.keywords} />
-        <link rel="canonical" href="https://thedumpsterman518.com/contact/" />
+        <link rel="canonical" href="https://thedumpsterman518.com/contact" />
         
         {/* Add structured data for contact page */}
         <script type="application/ld+json">

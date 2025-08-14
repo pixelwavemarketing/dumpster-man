@@ -17,7 +17,7 @@ function FAQ() {
         <title>{siteConfig.seoContent.faq.title}</title>
         <meta name="description" content={siteConfig.seoContent.faq.description} />
         <meta name="keywords" content={siteConfig.seoContent.faq.keywords} />
-        <link rel="canonical" href="https://thedumpsterman518.com/faq/" />
+        <link rel="canonical" href="https://thedumpsterman518.com/faq" />
         
                         {/* Add structured data for FAQ page */}
                 <script type="application/ld+json">

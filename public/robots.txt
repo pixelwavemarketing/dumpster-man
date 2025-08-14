@@ -1,3 +1,11 @@
 User-agent: *
 Allow: /
-Sitemap: https://thedumpsterman518.com/sitemap.xml 
+
+# Disallow old URLs that might cause confusion
+Disallow: /services
+
+# Sitemap location
+Sitemap: https://thedumpsterman518.com/sitemap.xml
+
+# Crawl delay (optional, helps with server load)
+Crawl-delay: 1 
