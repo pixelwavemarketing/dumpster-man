@@ -96,14 +96,29 @@ const ServiceArea = () => {
           <div className="services-grid">
             {siteConfig.dumpsters.slice(0, 3).map((dumpster, index) => (
               <div key={index} className="service-item">
-                <div className="image-container">
-                  <img src={dumpster.image} alt={dumpster.name} />
-                  <div className="overlay">
-                    <p>{dumpster.description}</p>
-                  </div>
-                </div>
                 <h3>{dumpster.name}</h3>
                 <p className="text-gray-600 text-sm mb-4 px-6">{dumpster.description}</p>
+                <div className="px-6 mb-4">
+                  <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+                    <div>
+                      <span className="font-semibold text-gray-700">Capacity:</span> {dumpster.capacity}
+                    </div>
+                    <div>
+                      <span className="font-semibold text-gray-700">Dimensions:</span> {dumpster.dimensions}
+                    </div>
+                    <div>
+                      <span className="font-semibold text-gray-700">Weight Limit:</span> {dumpster.weightLimit}
+                    </div>
+                    <div>
+                      <span className="font-semibold text-gray-700">Common Uses:</span>
+                      <ul className="mt-1 space-y-1">
+                        {dumpster.commonUses.slice(0, 2).map((use, useIndex) => (
+                          <li key={useIndex} className="text-xs">• {use}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
                 <p className="text-blue-600 font-semibold px-6 pb-6">Starting at {dumpster.pricing.basePrice}</p>
               </div>
             ))}
