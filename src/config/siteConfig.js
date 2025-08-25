@@ -212,6 +212,7 @@ export const siteConfig = {
   navigation: [
     { path: "/", label: "Home" },
     { path: "/dumpster-sizes", label: "Dumpster Sizes" },
+    { path: "/service-areas", label: "Service Areas" },
     { path: "/faq", label: "FAQ" },
     { path: "/contact", label: "Contact" }
   ],

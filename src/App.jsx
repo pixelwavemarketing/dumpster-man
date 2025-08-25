@@ -5,6 +5,8 @@ import FAQ from './pages/FAQ.jsx';
 import Home from './pages/Home.jsx';
 import Services from './pages/Services.jsx';
 import Contact from './pages/Contact.jsx';
+import ServiceArea from './pages/ServiceArea.jsx';
+import ServiceAreas from './pages/ServiceAreas.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import PerformanceMonitor from './components/PerformanceMonitor.jsx';
 import { HelmetProvider } from 'react-helmet-async';
@@ -27,6 +29,8 @@ function App() {
             <Route path="/dumpster-sizes" element={<Services />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/service-areas" element={<ServiceAreas />} />
+            <Route path="/service-areas/:area" element={<ServiceArea />} />
           </Routes>
           <Footer />
         </div>

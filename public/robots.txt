@@ -1,11 +1,23 @@
 User-agent: *
 Allow: /
 
-# Disallow old URLs that might cause confusion
-Disallow: /services
+# Disallow image files from being indexed as separate pages
+
+# Disallow image files from being indexed as separate pages
+Disallow: /images/
+Disallow: /assets/
+Disallow: /*.webp
+Disallow: /*.png
+Disallow: /*.jpg
+Disallow: /*.jpeg
+Disallow: /*.gif
+Disallow: /*.svg
 
 # Sitemap location
 Sitemap: https://thedumpsterman518.com/sitemap.xml
+
+# Canonical domain
+Host: https://thedumpsterman518.com
 
 # Crawl delay (optional, helps with server load)
 Crawl-delay: 1 

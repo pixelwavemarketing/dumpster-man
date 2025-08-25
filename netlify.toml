@@ -5,6 +5,52 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Redirect old /services URL to new /dumpster-sizes
+[[redirects]]
+  from = "/services"
+  to = "/dumpster-sizes"
+  status = 301
+  force = true
+
+# Redirect all domain variations to canonical HTTPS version
+[[redirects]]
+  from = "http://www.thedumpsterman518.com/*"
+  to = "https://thedumpsterman518.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.thedumpsterman518.com/*"
+  to = "https://thedumpsterman518.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://thedumpsterman518.com/*"
+  to = "https://thedumpsterman518.com/:splat"
+  status = 301
+  force = true
+
+# Handle root domain redirects
+[[redirects]]
+  from = "http://www.thedumpsterman518.com"
+  to = "https://thedumpsterman518.com"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.thedumpsterman518.com"
+  to = "https://thedumpsterman518.com"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://thedumpsterman518.com"
+  to = "https://thedumpsterman518.com"
+  status = 301
+  force = true
+
+# SPA routing - must be last
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -14,12 +60,12 @@
 [[headers]]
   for = "/*.js"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=86400"
 
 [[headers]]
   for = "/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=86400"
 
 [[headers]]
   for = "/*.webp"
@@ -55,6 +101,13 @@
   for = "/sw.js"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+# Canonical URL headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Canonical-URL = "https://thedumpsterman518.com"
+    X-Robots-Tag = "index, follow"
 
 [dev]
   command = "npm run dev"

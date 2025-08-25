@@ -1,28 +1,20 @@
-import { Helmet } from 'react-helmet-async';
 import heroTruck from '../assets/images/hero-truck.webp'
 import dumpster20 from '../assets/images/20lot.webp'
 import { Link } from 'react-router-dom'
 import siteConfig from '../config/siteConfig.js'
-import StructuredData from '../components/StructuredData.jsx'
+import SEOOptimizer from '../components/SEOOptimizer.jsx'
 import OptimizedImage from '../components/OptimizedImage.jsx'
 
 function Home() {
   return (
     <>
-      <Helmet>
-        <title>Capital Region Dumpster Rental | Same-Day Delivery Mechanicville NY - The Dumpster Man</title>
-        <meta name="description" content="Capital Region dumpster rental with same-day delivery in Mechanicville, Clifton Park, Ballston Spa & Halfmoon NY. Get competitive pricing on 12-25 yard dumpsters. Call (518) 920-2618!" />
-        <meta name="keywords" content="capital region dumpster rental, dumpster rental mechanicville, dumpster rental clifton park ny, dumpster rental ballston spa ny, dumpster rental halfmoon, the dumpster man, same day delivery" />
-        <link rel="canonical" href="https://thedumpsterman518.com/" />
-        
-        {/* Add structured data for local business */}
-        <script type="application/ld+json">
-          {StructuredData({ type: "aiOptimized" })}
-        </script>
-        <script type="application/ld+json">
-          {StructuredData({ type: "localBusiness" })}
-        </script>
-      </Helmet>
+      <SEOOptimizer
+        title="Capital Region Dumpster Rental | Same-Day Delivery Mechanicville NY - The Dumpster Man"
+        description="Capital Region dumpster rental with same-day delivery in Mechanicville, Clifton Park, Ballston Spa & Halfmoon NY. Get competitive pricing on 12-25 yard dumpsters. Call (518) 920-2618!"
+        keywords="capital region dumpster rental, dumpster rental mechanicville, dumpster rental clifton park ny, dumpster rental ballston spa ny, dumpster rental halfmoon, the dumpster man, same day delivery"
+        canonicalUrl="https://thedumpsterman518.com/"
+        structuredDataType="aiOptimized"
+      />
       
       <div className="hero-section">
         <OptimizedImage 
