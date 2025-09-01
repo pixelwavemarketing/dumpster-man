@@ -28,6 +28,14 @@ const ServiceArea = () => {
   const areaName = serviceArea;
   const areaSlug = area; // This should match the URL parameter exactly
   
+  // Get unique content for this specific service area
+  const areaContent = siteConfig.serviceAreas.areaContent[areaName] || {
+    description: `Professional dumpster rental services in ${areaName}, NY. Same-day delivery, competitive pricing, multiple dumpster sizes for residential and commercial projects.`,
+    highlights: ["Professional service", "Same-day delivery", "Competitive pricing", "Local expertise"],
+    localInfo: `${areaName} is part of the Capital Region, offering diverse project types and waste management needs.`,
+    popularProjects: ["Home renovations", "Construction projects", "Residential cleanouts", "Commercial waste"]
+  };
+  
   // Ensure the canonical URL matches exactly what Google is crawling
   const canonicalUrl = `https://thedumpsterman518.com/service-areas/${areaSlug}`;
 
@@ -35,7 +43,7 @@ const ServiceArea = () => {
     <>
       <Helmet>
         <title>{`Dumpster Rental in ${areaName}, NY | The Dumpster Man 518`}</title>
-        <meta name="description" content={`Professional dumpster rental services in ${areaName}, NY. Same-day delivery, competitive pricing, multiple dumpster sizes for residential and commercial projects.`} />
+        <meta name="description" content={areaContent.description} />
         <meta name="keywords" content={`dumpster rental ${areaName}, dumpster rental NY, waste management ${areaName}, construction dumpster ${areaName}`} />
         <link rel="canonical" href={canonicalUrl} />
         
@@ -59,7 +67,48 @@ const ServiceArea = () => {
         
         {/* Structured Data */}
         <script type="application/ld+json">
-          {StructuredData({ type: "localBusiness" })}
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": `The Dumpster Man 518 - ${areaName}`,
+            "description": areaContent.description,
+            "url": canonicalUrl,
+            "telephone": siteConfig.company.phone,
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": areaName,
+              "addressRegion": "NY",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": siteConfig.company.coordinates.latitude,
+              "longitude": siteConfig.company.coordinates.longitude
+            },
+            "serviceArea": {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": siteConfig.company.coordinates.latitude,
+                "longitude": siteConfig.company.coordinates.longitude
+              },
+              "geoRadius": "50000"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Dumpster Rental Services",
+              "itemListElement": siteConfig.dumpsters.map(dumpster => ({
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": dumpster.name,
+                  "description": dumpster.description
+                }
+              }))
+            },
+            "openingHours": siteConfig.company.hours,
+            "priceRange": "$$"
+          })}
         </script>
       </Helmet>
       
@@ -75,6 +124,18 @@ const ServiceArea = () => {
               <strong>Same-day delivery available in {areaName}!</strong> Call us at {siteConfig.company.phone} for immediate service.
             </p>
           </div>
+          
+          {/* Area-specific highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 max-w-4xl mx-auto">
+            {areaContent.highlights.map((highlight, index) => (
+              <div key={index} className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <div className="flex items-center">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 font-medium">{highlight}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -83,8 +144,8 @@ const ServiceArea = () => {
         <div className="content-wrapper text-center">
           <h2>Why Choose The Dumpster Man 518 in {areaName}?</h2>
           <div className="section-content">
-            <p>We're your local waste management experts in {areaName}, NY, providing reliable dumpster rental services with same-day delivery and competitive pricing. Our team understands the unique needs of {areaName} residents and businesses, ensuring you get the right dumpster size for your project.</p>
-            <p>With years of experience serving the Capital Region, we've built a reputation for professionalism, reliability, and exceptional customer service. Whether you're tackling a home renovation, construction project, or residential cleanout, our experienced team ensures efficient service and exceptional customer care.</p>
+            <p>{areaContent.description}</p>
+            <p>{areaContent.localInfo}</p>
           </div>
         </div>
       </section>
@@ -120,6 +181,25 @@ const ServiceArea = () => {
                   </div>
                 </div>
                 <p className="text-blue-600 font-semibold px-6 pb-6">Starting at {dumpster.pricing.basePrice}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Projects Section */}
+      <section className="full-width-section secondary-section">
+        <div className="content-wrapper text-center">
+          <h2>Popular Projects in {areaName}</h2>
+          <div className="section-content">
+            <p>Our team in {areaName} specializes in these common project types, ensuring you get the right dumpster size and expert guidance for your specific needs.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 max-w-6xl mx-auto">
+            {areaContent.popularProjects.map((project, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="text-blue-600 text-2xl mb-3">🏗️</div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">{project}</h3>
+                <p className="text-gray-600 text-sm">Expert guidance and the right dumpster size for {project.toLowerCase()} in {areaName}.</p>
               </div>
             ))}
           </div>

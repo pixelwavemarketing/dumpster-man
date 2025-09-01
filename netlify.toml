@@ -12,13 +12,7 @@
   status = 301
   force = true
 
-# Redirect all domain variations to canonical HTTPS version
-[[redirects]]
-  from = "http://www.thedumpsterman518.com/*"
-  to = "https://thedumpsterman518.com/:splat"
-  status = 301
-  force = true
-
+# Canonical domain redirects - redirect www and non-www to canonical domain
 [[redirects]]
   from = "https://www.thedumpsterman518.com/*"
   to = "https://thedumpsterman518.com/:splat"
@@ -26,27 +20,14 @@
   force = true
 
 [[redirects]]
-  from = "http://thedumpsterman518.com/*"
+  from = "http://www.thedumpsterman518.com/*"
   to = "https://thedumpsterman518.com/:splat"
   status = 301
   force = true
 
-# Handle root domain redirects
 [[redirects]]
-  from = "http://www.thedumpsterman518.com"
-  to = "https://thedumpsterman518.com"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.thedumpsterman518.com"
-  to = "https://thedumpsterman518.com"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://thedumpsterman518.com"
-  to = "https://thedumpsterman518.com"
+  from = "http://thedumpsterman518.com/*"
+  to = "https://thedumpsterman518.com/:splat"
   status = 301
   force = true
 

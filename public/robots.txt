@@ -2,16 +2,20 @@ User-agent: *
 Allow: /
 
 # Disallow image files from being indexed as separate pages
-
-# Disallow image files from being indexed as separate pages
-Disallow: /images/
-Disallow: /assets/
+# Note: This only blocks direct image access, not pages that contain images
 Disallow: /*.webp
 Disallow: /*.png
 Disallow: /*.jpg
 Disallow: /*.jpeg
 Disallow: /*.gif
 Disallow: /*.svg
+Disallow: /*.ico
+
+# Allow service area pages and other content pages
+Allow: /service-areas/
+Allow: /contact
+Allow: /faq
+Allow: /dumpster-sizes
 
 # Sitemap location
 Sitemap: https://thedumpsterman518.com/sitemap.xml

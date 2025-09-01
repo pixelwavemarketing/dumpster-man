@@ -131,7 +131,58 @@ export const siteConfig = {
       "Round Lake",
       "Malta"
     ],
-    note: "And all surrounding Capital Region communities"
+    note: "And all surrounding Capital Region communities",
+    // Unique content for each service area to eliminate duplicate content issues
+    areaContent: {
+      "Mechanicville": {
+        description: "As our home base, Mechanicville offers the fastest dumpster delivery in the Capital Region. Our local expertise and quick response times make us the preferred choice for dumpster rental in Mechanicville, NY.",
+        highlights: ["Fastest delivery times", "Local expertise", "Community knowledge", "Same-day service guaranteed"],
+        localInfo: "Located in Saratoga County, Mechanicville is known for its industrial heritage and convenient access to major highways including I-87 and Route 9.",
+        popularProjects: ["Home renovations", "Garage cleanouts", "Yard waste removal", "Construction debris"]
+      },
+      "Clifton Park": {
+        description: "Serving Clifton Park with premium dumpster rental services. Our team understands the unique needs of this growing suburban community and provides reliable waste management solutions.",
+        highlights: ["Suburban expertise", "Flexible scheduling", "Competitive pricing", "Professional service"],
+        localInfo: "Clifton Park is a rapidly growing town in Saratoga County, known for its excellent schools, shopping centers, and family-friendly neighborhoods.",
+        popularProjects: ["Kitchen remodels", "Bathroom renovations", "Deck removal", "Landscaping projects"]
+      },
+      "Saratoga Springs": {
+        description: "Premium dumpster rental services in Saratoga Springs, NY. From historic home renovations to commercial projects, we provide the right dumpster size for every project in this historic city.",
+        highlights: ["Historic home expertise", "Commercial project support", "Tourist season awareness", "Premium service"],
+        localInfo: "Famous for its thoroughbred racing, Saratoga Springs combines historic charm with modern amenities, making it a unique location for construction and renovation projects.",
+        popularProjects: ["Historic renovations", "Commercial cleanouts", "Event venue projects", "Residential upgrades"]
+      },
+      "Troy": {
+        description: "Reliable dumpster rental in Troy, NY. Our experienced team serves this historic city with efficient waste management solutions for both residential and commercial projects.",
+        highlights: ["Urban project expertise", "Historic building knowledge", "Commercial support", "Reliable service"],
+        localInfo: "Troy is a historic city in Rensselaer County, known for its rich architectural heritage and vibrant downtown area with many renovation and restoration projects.",
+        popularProjects: ["Historic restorations", "Commercial renovations", "Multi-family projects", "Downtown developments"]
+      },
+      "Waterford": {
+        description: "Professional dumpster rental services in Waterford, NY. Located at the confluence of the Hudson and Mohawk Rivers, we provide reliable waste management for this unique waterfront community.",
+        highlights: ["Waterfront project expertise", "Environmental awareness", "Local knowledge", "Flexible scheduling"],
+        localInfo: "Waterford is a historic village in Saratoga County, known for its canal heritage and waterfront properties that often require specialized waste management solutions.",
+        popularProjects: ["Waterfront renovations", "Canal-side projects", "Historic home updates", "Landscaping work"]
+      },
+      "Stillwater": {
+        description: "Dumpster rental services in Stillwater, NY. Our local team understands the rural and suburban mix of this community and provides tailored waste management solutions.",
+        highlights: ["Rural project expertise", "Agricultural knowledge", "Flexible delivery", "Local service"],
+        localInfo: "Stillwater is a town in Saratoga County that combines rural charm with suburban convenience, offering diverse project types from farm cleanouts to modern home renovations.",
+        popularProjects: ["Farm cleanouts", "Rural renovations", "Agricultural projects", "Residential upgrades"]
+      },
+      "Round Lake": {
+        description: "Efficient dumpster rental in Round Lake, NY. Serving this lakeside community with reliable waste management for all types of projects, from small cleanouts to major renovations.",
+        highlights: ["Lakeside project expertise", "Seasonal awareness", "Quick response", "Local knowledge"],
+        localInfo: "Round Lake is a village in Saratoga County known for its beautiful lake and seasonal population changes, requiring flexible and responsive waste management services.",
+        popularProjects: ["Lakeside renovations", "Seasonal cleanouts", "Vacation home projects", "Landscaping work"]
+      },
+      "Malta": {
+        description: "Professional dumpster rental in Malta, NY. Our team serves this growing tech corridor community with reliable waste management solutions for modern development projects.",
+        highlights: ["Tech corridor expertise", "Modern development support", "Innovation awareness", "Professional service"],
+        localInfo: "Malta is a rapidly developing town in Saratoga County, home to the GlobalFoundries semiconductor plant and many modern development projects requiring efficient waste management.",
+        popularProjects: ["Modern home renovations", "Commercial developments", "Tech facility projects", "New construction support"]
+      }
+    }
   },
 
   // FAQ Data - Enhanced for AI understanding
