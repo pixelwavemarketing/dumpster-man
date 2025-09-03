@@ -38,12 +38,27 @@
   status = 200
   force = true
 
+# Ensure JavaScript files are served correctly
+[[redirects]]
+  from = "/*.js"
+  to = "/:splat"
+  status = 200
+  force = true
+
+# Ensure CSS files are served correctly
+[[redirects]]
+  from = "/*.css"
+  to = "/:splat"
+  status = 200
+  force = true
+
 # SPA routing - redirect non-asset requests to index.html
 # This should be the last redirect rule
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
 
 # Performance optimizations
 [[headers]]
