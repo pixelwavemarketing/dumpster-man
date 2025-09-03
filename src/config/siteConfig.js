@@ -129,7 +129,9 @@ export const siteConfig = {
       "Waterford",
       "Stillwater",
       "Round Lake",
-      "Malta"
+      "Malta",
+      "Albany",
+      "Ballston Spa"
     ],
     note: "And all surrounding Capital Region communities",
     // Unique content for each service area to eliminate duplicate content issues
@@ -181,6 +183,18 @@ export const siteConfig = {
         highlights: ["Tech corridor expertise", "Modern development support", "Innovation awareness", "Professional service"],
         localInfo: "Malta is a rapidly developing town in Saratoga County, home to the GlobalFoundries semiconductor plant and many modern development projects requiring efficient waste management.",
         popularProjects: ["Modern home renovations", "Commercial developments", "Tech facility projects", "New construction support"]
+      },
+      "Albany": {
+        description: "Comprehensive dumpster rental services in Albany, NY. As the capital of New York State, we provide reliable waste management solutions for government buildings, commercial properties, and residential projects throughout the city.",
+        highlights: ["Government building expertise", "Commercial project support", "Urban project knowledge", "Capital city service"],
+        localInfo: "Albany is the capital of New York State, featuring a mix of historic architecture, government buildings, and modern commercial developments requiring specialized waste management services.",
+        popularProjects: ["Government building projects", "Commercial renovations", "Historic building updates", "Urban development"]
+      },
+      "Ballston Spa": {
+        description: "Professional dumpster rental in Ballston Spa, NY. Our experienced team serves this charming village with reliable waste management solutions for both historic preservation projects and modern developments.",
+        highlights: ["Historic preservation expertise", "Village project knowledge", "Flexible scheduling", "Local service"],
+        localInfo: "Ballston Spa is a historic village in Saratoga County, known for its charming downtown, historic architecture, and mix of residential and commercial projects.",
+        popularProjects: ["Historic home renovations", "Downtown improvements", "Residential cleanouts", "Commercial updates"]
       }
     }
   },

@@ -1,8 +1,9 @@
 User-agent: *
 Allow: /
 
-# Disallow image files from being indexed as separate pages
-# Note: This only blocks direct image access, not pages that contain images
+# Disallow image files and assets from being indexed as separate pages
+Disallow: /assets/
+Disallow: /images/
 Disallow: /*.webp
 Disallow: /*.png
 Disallow: /*.jpg
@@ -10,6 +11,8 @@ Disallow: /*.jpeg
 Disallow: /*.gif
 Disallow: /*.svg
 Disallow: /*.ico
+Disallow: /*.css
+Disallow: /*.js
 
 # Allow service area pages and other content pages
 Allow: /service-areas/

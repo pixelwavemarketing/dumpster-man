@@ -31,7 +31,15 @@
   status = 301
   force = true
 
-# SPA routing - must be last
+# Ensure static assets are served correctly (no redirect)
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+  force = true
+
+# SPA routing - redirect non-asset requests to index.html
+# This should be the last redirect rule
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -82,6 +90,27 @@
   for = "/sw.js"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+# Prevent indexing of asset files
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
 
 # Canonical URL headers
 [[headers]]

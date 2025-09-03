@@ -56,6 +56,27 @@ function Home() {
           priority={true}
           sizes="100vw"
         />
+        {/* Mobile Hero Content */}
+        <div className="mobile-hero-content">
+          <div className="mobile-hero-text">
+            <h1>Capital Region Dumpster Rental</h1>
+            <h2>Same-Day Delivery • Competitive Pricing • Local Service</h2>
+            <p className="mobile-hero-subtitle">Serving Mechanicville, Clifton Park, Ballston Spa, Halfmoon & Capital Region</p>
+            <div className="mobile-hero-cta-buttons">
+              <Link to="/contact" className="cta-button primary">
+                Get Free Quote →
+              </Link>
+              <Link to="/dumpster-sizes" className="cta-button secondary">
+                View Dumpster Sizes →
+              </Link>
+            </div>
+            <div className="mobile-hero-features">
+              <span className="feature">✓ Same-Day Delivery</span>
+              <span className="feature">✓ Competitive Pricing</span>
+              <span className="feature">✓ Local Service</span>
+            </div>
+          </div>
+        </div>
       </div>
 
 
