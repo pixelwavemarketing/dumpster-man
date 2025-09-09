@@ -13,23 +13,49 @@
   force = true
 
 # Canonical domain redirects - redirect www and non-www to canonical domain
+# These redirects handle all variations to ensure proper canonicalization
 [[redirects]]
   from = "https://www.thedumpsterman518.com/*"
   to = "https://thedumpsterman518.com/:splat"
   status = 301
   force = true
+  headers = {X-Robots-Tag = "noindex"}
 
 [[redirects]]
   from = "http://www.thedumpsterman518.com/*"
   to = "https://thedumpsterman518.com/:splat"
   status = 301
   force = true
+  headers = {X-Robots-Tag = "noindex"}
 
 [[redirects]]
   from = "http://thedumpsterman518.com/*"
   to = "https://thedumpsterman518.com/:splat"
   status = 301
   force = true
+  headers = {X-Robots-Tag = "noindex"}
+
+# Handle root domain redirects specifically
+[[redirects]]
+  from = "https://www.thedumpsterman518.com/"
+  to = "https://thedumpsterman518.com/"
+  status = 301
+  force = true
+  headers = {X-Robots-Tag = "noindex"}
+
+[[redirects]]
+  from = "http://www.thedumpsterman518.com/"
+  to = "https://thedumpsterman518.com/"
+  status = 301
+  force = true
+  headers = {X-Robots-Tag = "noindex"}
+
+[[redirects]]
+  from = "http://thedumpsterman518.com/"
+  to = "https://thedumpsterman518.com/"
+  status = 301
+  force = true
+  headers = {X-Robots-Tag = "noindex"}
 
 # Ensure static assets are served correctly (no redirect)
 [[redirects]]

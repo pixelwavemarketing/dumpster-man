@@ -9,6 +9,7 @@ import ServiceArea from './pages/ServiceArea.jsx';
 import ServiceAreas from './pages/ServiceAreas.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import PerformanceMonitor from './components/PerformanceMonitor.jsx';
+import SEOOptimizer from './components/SEOOptimizer.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import './App.css';
 import './styles/buttons.css';
@@ -22,6 +23,7 @@ function App() {
       <Router>
         <ScrollToTop />
         <PerformanceMonitor />
+        <SEOOptimizer />
         <div className="App">
           <Header />
           <Routes>
