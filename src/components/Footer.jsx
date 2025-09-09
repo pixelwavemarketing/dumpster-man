@@ -53,6 +53,7 @@ function Footer() {
       </div>
       
       <div className="footer-bottom">
+        <p className="copyright">© 2025 The Dumpster Man. All rights reserved.</p>
         <a 
           href="https://usepixelwave.com" 
           target="_blank" 

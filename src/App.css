@@ -1225,6 +1225,13 @@ main {
   color: white;
 }
 
+.copyright {
+  color: #ccc;
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 400;
+}
+
 /* Mobile footer adjustments */
 @media (max-width: 768px) {
   .footer {

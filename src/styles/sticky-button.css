@@ -1,0 +1,137 @@
+/* Sticky Call Button Styles */
+.sticky-call-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+.sticky-call-button.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sticky-call-button.hidden {
+  transform: translateY(100px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.sticky-call-link {
+  display: flex;
+  align-items: center;
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  min-width: 140px;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sticky-call-link:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.sticky-call-link:active {
+  transform: scale(0.95);
+}
+
+.sticky-call-link svg {
+  flex-shrink: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .sticky-call-button {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .sticky-call-link {
+    padding: 10px 16px;
+    font-size: 14px;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sticky-call-button {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .sticky-call-link {
+    padding: 8px 14px;
+    font-size: 13px;
+    min-width: 110px;
+  }
+}
+
+/* Ensure footer has enough bottom padding to account for sticky button */
+.footer {
+  padding-bottom: 100px !important; /* Add space for sticky button */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-bottom: 90px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding-bottom: 80px !important;
+  }
+}
+
+/* Animation for smooth appearance */
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.sticky-call-button.visible {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Pulse animation for attention */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.6);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
+}
+
+.sticky-call-link {
+  animation: pulse 2s infinite;
+}
+
+.sticky-call-link:hover {
+  animation: none;
+}

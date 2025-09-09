@@ -10,12 +10,14 @@ import ServiceAreas from './pages/ServiceAreas.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import PerformanceMonitor from './components/PerformanceMonitor.jsx';
 import SEOOptimizer from './components/SEOOptimizer.jsx';
+import StickyCallButton from './components/StickyCallButton.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import './App.css';
 import './styles/buttons.css';
 import './styles/layouts.css';
 import './styles/navigation.css';
 import './styles/mobile.css';
+import './styles/sticky-button.css';
 
 function App() {
   return (
@@ -35,6 +37,7 @@ function App() {
             <Route path="/service-areas/:area" element={<ServiceArea />} />
           </Routes>
           <Footer />
+          <StickyCallButton />
         </div>
       </Router>
     </HelmetProvider>
