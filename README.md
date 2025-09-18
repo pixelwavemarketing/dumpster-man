@@ -8,3 +8,4 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 git add . && git commit -m "Update website changes" && git push origin master
+# Asset hash fix - Thu Sep 18 12:30:44 CDT 2025
