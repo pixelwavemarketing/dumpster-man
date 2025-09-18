@@ -42,7 +42,7 @@ const StickyCallButton = () => {
       style={{
         position: 'fixed',
         bottom: '20px',
-        right: '20px',
+        left: '20px',
         zIndex: 1000,
         transition: 'all 0.3s ease-in-out',
         transform: isVisible ? 'translateY(0)' : 'translateY(100px)',

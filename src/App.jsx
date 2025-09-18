@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import FAQ from './pages/FAQ.jsx';
@@ -20,6 +21,23 @@ import './styles/mobile.css';
 import './styles/sticky-button.css';
 
 function App() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://ai-chatbot-p.netlify.app/embed.js';
+    script.setAttribute('data-width', '380px');
+    script.setAttribute('data-height', '520px');
+    script.setAttribute('data-button-color', '#059669');
+    script.setAttribute('data-button-text', 'Ask About Dumpsters');
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <HelmetProvider>
       <Router>
