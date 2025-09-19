@@ -37,35 +37,38 @@ const SEOOptimizer = ({
     );
   }
 
-  // Fallback: Update SEO based on current route (for pages that don't use props)
+  // Only handle fallback SEO for pages that don't provide canonical URL via props
   useEffect(() => {
+    // Only run this effect if no canonical URL was provided via props
+    if (canonicalUrl) return;
+
     const updateSEO = () => {
       const path = location.pathname;
       const baseUrl = 'https://thedumpsterman518.com';
       const currentCanonicalUrl = `${baseUrl}${path === '/' ? '' : path}`;
 
-      // Set canonical URL
+      // Only set canonical URL if Helmet hasn't already set one
       let canonicalLink = document.querySelector('link[rel="canonical"]');
       if (!canonicalLink) {
         canonicalLink = document.createElement('link');
         canonicalLink.rel = 'canonical';
         document.head.appendChild(canonicalLink);
+        canonicalLink.href = currentCanonicalUrl;
       }
-      canonicalLink.href = currentCanonicalUrl;
 
-      // Ensure proper meta robots tag
+      // Ensure proper meta robots tag (only if not set by Helmet)
       let robotsMeta = document.querySelector('meta[name="robots"]');
       if (!robotsMeta) {
         robotsMeta = document.createElement('meta');
         robotsMeta.name = 'robots';
         document.head.appendChild(robotsMeta);
-      }
-      
-      // Set robots content based on page type
-      if (path.startsWith('/assets/') || path.match(/\.(webp|png|jpg|jpeg|gif|svg|ico|css|js)$/)) {
-        robotsMeta.content = 'noindex, nofollow';
-      } else {
-        robotsMeta.content = 'index, follow';
+        
+        // Set robots content based on page type
+        if (path.startsWith('/assets/') || path.match(/\.(webp|png|jpg|jpeg|gif|svg|ico|css|js)$/)) {
+          robotsMeta.content = 'noindex, nofollow';
+        } else {
+          robotsMeta.content = 'index, follow';
+        }
       }
 
       // Add language attribute to html tag
@@ -73,7 +76,7 @@ const SEOOptimizer = ({
     };
 
     updateSEO();
-  }, [location]);
+  }, [location, canonicalUrl]);
 
   return null; // This component doesn't render anything when used as fallback
 };

@@ -49,10 +49,15 @@ const ServiceArea = () => {
         
         {/* Additional SEO meta tags */}
         <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="google" content="notranslate" />
         <meta name="geo.region" content="US-NY" />
         <meta name="geo.placename" content={areaName} />
+        <meta name="geo.position" content={`${siteConfig.company.coordinates.latitude};${siteConfig.company.coordinates.longitude}`} />
+        <meta name="ICBM" content={`${siteConfig.company.coordinates.latitude}, ${siteConfig.company.coordinates.longitude}`} />
+        <meta name="author" content="The Dumpster Man 518" />
+        <meta name="revisit-after" content="7 days" />
+        <meta httpEquiv="content-language" content="en-US" />
         
         {/* Open Graph */}
         <meta property="og:title" content={`Dumpster Rental in ${areaName}, NY | The Dumpster Man 518`} />
