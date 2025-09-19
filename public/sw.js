@@ -1,9 +1,11 @@
-const CACHE_NAME = 'dumpsterman-v1';
+const CACHE_NAME = 'dumpsterman-v2';
 const urlsToCache = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/favicon.ico'
+  '/favicon.ico',
+  '/assets/',
+  '/src/assets/images/'
 ];
 
 // Install event - cache resources
@@ -15,6 +17,8 @@ self.addEventListener('install', event => {
         return cache.addAll(urlsToCache);
       })
   );
+  // Skip waiting to activate immediately
+  self.skipWaiting();
 });
 
 // Fetch event - serve from cache when offline
@@ -29,11 +33,35 @@ self.addEventListener('fetch', event => {
     return;
   }
 
+  // Skip external requests (like the chatbot)
+  if (!event.request.url.startsWith(self.location.origin)) {
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request)
       .then(response => {
         // Return cached version or fetch from network
-        return response || fetch(event.request);
+        if (response) {
+          return response;
+        }
+        
+        // For network requests, try to cache successful responses
+        return fetch(event.request).then(fetchResponse => {
+          // Don't cache if not a valid response
+          if (!fetchResponse || fetchResponse.status !== 200 || fetchResponse.type !== 'basic') {
+            return fetchResponse;
+          }
+
+          // Clone the response for caching
+          const responseToCache = fetchResponse.clone();
+          
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, responseToCache);
+          });
+
+          return fetchResponse;
+        });
       })
       .catch(() => {
         // If both cache and network fail, return a fallback
@@ -60,6 +88,9 @@ self.addEventListener('activate', event => {
           }
         })
       );
+    }).then(() => {
+      // Claim all clients immediately
+      return self.clients.claim();
     })
   );
 }); 

@@ -4,8 +4,9 @@ import App from './App.jsx'
 import './index.css'
 import ErrorBoundary from './components/ErrorBoundary.jsx'
 
-// Register service worker for caching
-if ('serviceWorker' in navigator) {
+// Register service worker for caching (only once)
+if ('serviceWorker' in navigator && !window.swRegistered) {
+  window.swRegistered = true;
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
       .then(registration => {
@@ -18,9 +19,7 @@ if ('serviceWorker' in navigator) {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <ErrorBoundary>
-      <App />
-    </ErrorBoundary>
-  </React.StrictMode>
+  <ErrorBoundary>
+    <App />
+  </ErrorBoundary>
 )

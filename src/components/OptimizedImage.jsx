@@ -18,25 +18,31 @@ const OptimizedImage = ({
   useEffect(() => {
     if (priority) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect();
-        }
-      },
-      {
-        rootMargin: '50px 0px',
-        threshold: 0.01
-      }
-    );
-
+    let observer;
     const imgElement = document.querySelector(`[data-src="${src}"]`);
-    if (imgElement) {
+    
+    if (imgElement && !imgElement.dataset.observed) {
+      imgElement.dataset.observed = 'true';
+      
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect();
+          }
+        },
+        {
+          rootMargin: '50px 0px',
+          threshold: 0.01
+        }
+      );
+
       observer.observe(imgElement);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      if (observer) observer.disconnect();
+    };
   }, [src, priority]);
 
   const handleLoad = () => {

@@ -22,6 +22,9 @@ import './styles/sticky-button.css';
 
 function App() {
   useEffect(() => {
+    // Prevent duplicate chatbot scripts
+    if (window.chatbotLoaded) return;
+    
     const script = document.createElement('script');
     script.src = 'https://ai-chatbot-p.netlify.app/embed.js';
     script.setAttribute('data-width', '380px');
@@ -29,12 +32,16 @@ function App() {
     script.setAttribute('data-button-color', '#059669');
     script.setAttribute('data-button-text', 'Ask About Dumpsters');
     script.async = true;
+    
+    script.onload = () => {
+      window.chatbotLoaded = true;
+    };
+    
     document.body.appendChild(script);
     
     return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
+      // Don't remove the script on unmount to prevent reload issues
+      // The chatbot should persist across route changes
     };
   }, []);
 
