@@ -1,5 +1,5 @@
-import { useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { useParams, Link } from 'react-router-dom';
+import SEOOptimizer from '../components/SEOOptimizer.jsx';
 import siteConfig from '../config/siteConfig.js';
 import StructuredData from '../components/StructuredData.jsx';
 
@@ -41,81 +41,59 @@ const ServiceArea = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{`Dumpster Rental in ${areaName}, NY | The Dumpster Man 518`}</title>
-        <meta name="description" content={areaContent.description} />
-        <meta name="keywords" content={`dumpster rental ${areaName}, dumpster rental NY, waste management ${areaName}, construction dumpster ${areaName}`} />
-        <link rel="canonical" href={canonicalUrl} />
-        
-        {/* Additional SEO meta tags */}
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <meta name="google" content="notranslate" />
-        <meta name="geo.region" content="US-NY" />
-        <meta name="geo.placename" content={areaName} />
-        <meta name="geo.position" content={`${siteConfig.company.coordinates.latitude};${siteConfig.company.coordinates.longitude}`} />
-        <meta name="ICBM" content={`${siteConfig.company.coordinates.latitude}, ${siteConfig.company.coordinates.longitude}`} />
-        <meta name="author" content="The Dumpster Man 518" />
-        <meta name="revisit-after" content="7 days" />
-        <meta httpEquiv="content-language" content="en-US" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content={`Dumpster Rental in ${areaName}, NY | The Dumpster Man 518`} />
-        <meta property="og:description" content={`Professional dumpster rental services in ${areaName}, NY. Same-day delivery, competitive pricing.`} />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:type" content="website" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`Dumpster Rental in ${areaName}, NY`} />
-        <meta name="twitter:description" content={`Professional dumpster rental services in ${areaName}, NY.`} />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": `The Dumpster Man 518 - ${areaName}`,
-            "description": areaContent.description,
-            "url": canonicalUrl,
-            "telephone": siteConfig.company.phone,
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": areaName,
-              "addressRegion": "NY",
-              "addressCountry": "US"
-            },
-            "geo": {
+      <SEOOptimizer
+        title={`Dumpster Rental in ${areaName}, NY | The Dumpster Man 518`}
+        description={areaContent.description}
+        keywords={`dumpster rental ${areaName}, dumpster rental NY, waste management ${areaName}, construction dumpster ${areaName}`}
+        canonicalUrl={canonicalUrl}
+        structuredDataType="localBusiness"
+      />
+      
+      <StructuredData
+        type="LocalBusiness"
+        data={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": `The Dumpster Man 518 - ${areaName}`,
+          "description": areaContent.description,
+          "url": canonicalUrl,
+          "telephone": siteConfig.company.phone,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": areaName,
+            "addressRegion": "NY",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": siteConfig.company.coordinates.latitude,
+            "longitude": siteConfig.company.coordinates.longitude
+          },
+          "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
               "@type": "GeoCoordinates",
               "latitude": siteConfig.company.coordinates.latitude,
               "longitude": siteConfig.company.coordinates.longitude
             },
-            "serviceArea": {
-              "@type": "GeoCircle",
-              "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": siteConfig.company.coordinates.latitude,
-                "longitude": siteConfig.company.coordinates.longitude
-              },
-              "geoRadius": "50000"
-            },
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Dumpster Rental Services",
-              "itemListElement": siteConfig.dumpsters.map(dumpster => ({
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": dumpster.name,
-                  "description": dumpster.description
-                }
-              }))
-            },
-            "openingHours": siteConfig.company.hours,
-            "priceRange": "$$"
-          })}
-        </script>
-      </Helmet>
+            "geoRadius": "50000"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Dumpster Rental Services",
+            "itemListElement": siteConfig.dumpsters.map(dumpster => ({
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": dumpster.name,
+                "description": dumpster.description
+              }
+            }))
+          },
+          "openingHours": siteConfig.company.hours,
+          "priceRange": "$$"
+        }}
+      />
       
       {/* Hero Section */}
       <section className="full-width-section primary-section header-spacing" style={{ marginTop: '150px' }}>
@@ -222,15 +200,15 @@ const ServiceArea = () => {
             <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">Nearby Service Areas</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
               {siteConfig.serviceAreas.regions.slice(0, 8).map((region, index) => (
-                <a
+                <Link
                   key={index}
-                  href={`/service-areas/${region.toLowerCase().replace(/\s+/g, '-')}`}
+                  to={`/service-areas/${region.toLowerCase().replace(/\s+/g, '-')}`}
                   className="group relative bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl px-4 py-4 text-center text-blue-700 hover:text-blue-900 hover:from-blue-100 hover:to-indigo-100 hover:border-blue-400 transition-all duration-300 font-semibold shadow-md hover:shadow-xl hover:-translate-y-1 text-base md:text-lg"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-400 opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300"></div>
                   <span className="relative z-10">{region}</span>
                   <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-blue-400 group-hover:w-12 transition-all duration-300"></div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -251,13 +229,13 @@ const ServiceArea = () => {
             >
               Call Now
             </a>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="cta-button"
               style={{ marginLeft: '1rem' }}
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -29,6 +29,7 @@ Allow: /service-areas/round-lake
 Allow: /service-areas/malta
 Allow: /service-areas/albany
 Allow: /service-areas/ballston-spa
+Allow: /service-areas/schenectady
 
 # Sitemap location
 Sitemap: https://thedumpsterman518.com/sitemap.xml

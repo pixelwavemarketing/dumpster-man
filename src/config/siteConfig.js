@@ -131,7 +131,8 @@ export const siteConfig = {
       "Round Lake",
       "Malta",
       "Albany",
-      "Ballston Spa"
+      "Ballston Spa",
+      "Schenectady"
     ],
     note: "And all surrounding Capital Region communities",
     // Unique content for each service area to eliminate duplicate content issues
@@ -195,6 +196,12 @@ export const siteConfig = {
         highlights: ["Historic preservation expertise", "Village project knowledge", "Flexible scheduling", "Local service"],
         localInfo: "Ballston Spa is a historic village in Saratoga County, known for its charming downtown, historic architecture, and mix of residential and commercial projects.",
         popularProjects: ["Historic home renovations", "Downtown improvements", "Residential cleanouts", "Commercial updates"]
+      },
+      "Schenectady": {
+        description: "Comprehensive dumpster rental services in Schenectady, NY. Our team serves this historic city with reliable waste management solutions for urban projects, from residential renovations to commercial developments in the Electric City.",
+        highlights: ["Urban project expertise", "Historic city knowledge", "Commercial support", "Electric City service"],
+        localInfo: "Schenectady, known as the Electric City, is a historic city in Schenectady County with diverse neighborhoods, industrial heritage, and ongoing revitalization projects requiring professional waste management services.",
+        popularProjects: ["Urban renovations", "Commercial developments", "Historic building restoration", "Industrial cleanouts"]
       }
     }
   },
