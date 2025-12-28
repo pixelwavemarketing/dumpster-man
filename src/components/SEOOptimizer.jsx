@@ -2,6 +2,30 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
+// Normalize canonical URL - remove trailing slashes (except root), remove query params, lowercase
+const normalizeCanonicalUrl = (url) => {
+  if (!url) return url;
+  
+  try {
+    const urlObj = new URL(url);
+    // Remove query parameters
+    urlObj.search = '';
+    // Remove hash
+    urlObj.hash = '';
+    // Normalize pathname - remove trailing slash except for root
+    let pathname = urlObj.pathname;
+    if (pathname !== '/' && pathname.endsWith('/')) {
+      pathname = pathname.slice(0, -1);
+    }
+    urlObj.pathname = pathname;
+    
+    return urlObj.toString();
+  } catch (e) {
+    // If URL parsing fails, return as-is
+    return url;
+  }
+};
+
 const SEOOptimizer = ({ 
   title, 
   description, 
@@ -11,14 +35,17 @@ const SEOOptimizer = ({
 }) => {
   const location = useLocation();
 
+  // Normalize canonical URL if provided
+  const normalizedCanonicalUrl = canonicalUrl ? normalizeCanonicalUrl(canonicalUrl) : null;
+
   // If props are provided, use Helmet for SEO
-  if (title || description || keywords || canonicalUrl) {
+  if (title || description || keywords || normalizedCanonicalUrl) {
     return (
       <Helmet>
         {title && <title>{title}</title>}
         {description && <meta name="description" content={description} />}
         {keywords && <meta name="keywords" content={keywords} />}
-        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+        {normalizedCanonicalUrl && <link rel="canonical" href={normalizedCanonicalUrl} />}
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
         <meta name="google" content="notranslate" />
@@ -26,7 +53,7 @@ const SEOOptimizer = ({
         {/* Open Graph */}
         {title && <meta property="og:title" content={title} />}
         {description && <meta property="og:description" content={description} />}
-        {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+        {normalizedCanonicalUrl && <meta property="og:url" content={normalizedCanonicalUrl} />}
         <meta property="og:type" content="website" />
         
         {/* Twitter Card */}
@@ -40,12 +67,14 @@ const SEOOptimizer = ({
   // Only handle fallback SEO for pages that don't provide canonical URL via props
   useEffect(() => {
     // Only run this effect if no canonical URL was provided via props
-    if (canonicalUrl) return;
+    if (normalizedCanonicalUrl) return;
 
     const updateSEO = () => {
       const path = location.pathname;
       const baseUrl = 'https://thedumpsterman518.com';
-      const currentCanonicalUrl = `${baseUrl}${path === '/' ? '' : path}`;
+      // Normalize path - remove trailing slash except for root
+      let normalizedPath = path === '/' ? '' : path.replace(/\/$/, '');
+      const currentCanonicalUrl = normalizeCanonicalUrl(`${baseUrl}${normalizedPath}`);
 
       // Only set canonical URL if Helmet hasn't already set one
       let canonicalLink = document.querySelector('link[rel="canonical"]');
@@ -53,8 +82,8 @@ const SEOOptimizer = ({
         canonicalLink = document.createElement('link');
         canonicalLink.rel = 'canonical';
         document.head.appendChild(canonicalLink);
-        canonicalLink.href = currentCanonicalUrl;
       }
+      canonicalLink.href = currentCanonicalUrl;
 
       // Ensure proper meta robots tag (only if not set by Helmet)
       let robotsMeta = document.querySelector('meta[name="robots"]');
@@ -76,7 +105,7 @@ const SEOOptimizer = ({
     };
 
     updateSEO();
-  }, [location, canonicalUrl]);
+  }, [location, normalizedCanonicalUrl]);
 
   return null; // This component doesn't render anything when used as fallback
 };

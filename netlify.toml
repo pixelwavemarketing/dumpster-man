@@ -12,6 +12,39 @@
   status = 301
   force = true
 
+# Redirect trailing slashes to non-trailing slash versions (except root)
+# This prevents duplicate content issues
+[[redirects]]
+  from = "/service-areas/"
+  to = "/service-areas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dumpster-sizes/"
+  to = "/dumpster-sizes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faq/"
+  to = "/faq"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact/"
+  to = "/contact"
+  status = 301
+  force = true
+
+# Redirect service area pages with trailing slashes
+[[redirects]]
+  from = "/service-areas/*/"
+  to = "/service-areas/:splat"
+  status = 301
+  force = true
+
 # Canonical domain redirects - redirect www and non-www to canonical domain
 # These redirects handle all variations to ensure proper canonicalization
 [[redirects]]

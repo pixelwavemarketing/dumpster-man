@@ -50,6 +50,8 @@ function Contact() {
         <meta name="description" content={siteConfig.seoContent.contact.description} />
         <meta name="keywords" content={siteConfig.seoContent.contact.keywords} />
         <link rel="canonical" href="https://thedumpsterman518.com/contact" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
         
         {/* Add structured data for contact page */}
         <script type="application/ld+json">

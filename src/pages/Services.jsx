@@ -33,6 +33,8 @@ function Services() {
         <meta name="description" content={siteConfig.seoContent.services.description} />
         <meta name="keywords" content={siteConfig.seoContent.services.keywords} />
         <link rel="canonical" href="https://thedumpsterman518.com/dumpster-sizes" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
         
         <script type="application/ld+json">
           {StructuredData({ type: "product" })}

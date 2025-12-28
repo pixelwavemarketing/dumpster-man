@@ -18,6 +18,8 @@ function FAQ() {
         <meta name="description" content={siteConfig.seoContent.faq.description} />
         <meta name="keywords" content={siteConfig.seoContent.faq.keywords} />
         <link rel="canonical" href="https://thedumpsterman518.com/faq" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
         
                         {/* Add structured data for FAQ page */}
                 <script type="application/ld+json">

@@ -1,0 +1,12 @@
+# Domain redirects - redirect www and http to canonical https non-www
+# These must be in _redirects file for Netlify to handle domain-level redirects
+
+# Redirect www HTTPS to non-www HTTPS
+https://www.thedumpsterman518.com/* https://thedumpsterman518.com/:splat 301!
+
+# Redirect www HTTP to non-www HTTPS
+http://www.thedumpsterman518.com/* https://thedumpsterman518.com/:splat 301!
+
+# Redirect non-www HTTP to non-www HTTPS
+http://thedumpsterman518.com/* https://thedumpsterman518.com/:splat 301!
+
